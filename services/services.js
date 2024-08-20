@@ -142,3 +142,4 @@ async function findUser(username,password) {
 
 //Arreglar Merge
 
+export {findUser,updateU,updateUser,addUser,deleteUser,tries,getUsers,removeUser}
