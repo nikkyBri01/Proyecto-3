@@ -22,11 +22,12 @@ async function tries() {
 
 
 //-----------------------------------Post----------------------------------//
-async function postUsers(username, password) {
+async function postUsers(username, password,admin) {
     try {
       const userData = {
         username,
-        password
+        password,
+        admin
       };
       const response = await fetch("http://localhost:3000/users", {
         method: "POST",
@@ -42,20 +43,26 @@ async function postUsers(username, password) {
     }
 }
 //Añadir usuarions si no existen aun
- async function addUser(username, password) {   
+ async function addUser(username, password,codigo) {  
+    let admin=false;
+    if (codigo=="0000") {
+        admin=true
+    } 
     try {
         let users= await getUsers();
         let userExist=users.some(user=>user.username===username);
         if (userExist) {
             return console.log("Ya existe el usuario");    
         }
-        else {await postUsers(username,password);
+        else {await postUsers(username,password,admin);
         console.log("Se añadio el usuario");}
     } catch (error) {
         return console.log("Error en la funcion update", error);
     }
 }
 
+
+addUser("Jose","555","0001")
 //---------------------------------Delete----------------------------------//
 async function deleteUser(id) {
     try {
@@ -68,7 +75,7 @@ async function deleteUser(id) {
     if (!response.ok) {
         throw new Error("No se ejecuto");
     }
-    return { message: `User with id ${username} deleted successfully` };
+    return { message: `User with id ${id} deleted successfully` };
     } catch (error) {
         console.error('Error deleting user:', error);
         throw error;
@@ -77,13 +84,16 @@ async function deleteUser(id) {
 
 async function removeUser(username) {
     let response = await fetch ("http://localhost:3000/users");
-    response.forEach(user => {
+    let users = await response.json();
+    users.forEach(async (user) => {
         if (user.username==username) {
-            
+            return await deleteUser(user.id) 
         }
+
     });
     
 }
+
 //----------------------------------Update---------------------------------//
 
 async function updateUser(username,password,id) {
@@ -107,3 +117,28 @@ async function updateUser(username,password,id) {
         throw error;
     }
 }
+
+async function updateU(username,newusername) {
+    let response= await fetch("http://localhost:3000/users/")
+    let usuarios= await response.json();
+    usuarios.forEach(async user => {
+        if (user.username==username) {
+            return await updateUser(newusername,user.password,user.id) 
+        }
+    });
+}
+
+
+
+async function findUser(username,password) {
+    let response= await fetch ("http://localhost:3000/users/");
+    let users= await response.json()
+    let existe=users.some(username&&password);
+    if (existe) {
+        return console.log("Se encontro el usuario y entro");
+    }
+    else return console.log("No se encontro el usuario");
+}
+
+
+

@@ -2,6 +2,7 @@
   "name": "src",
   "version": "1.0.0",
   "main": "app.js",
+  "type": "module",
   "scripts": {
     "start": "npx parcel index.html",
     "server": "json-server --watch ./server/db.json --port 3000"
