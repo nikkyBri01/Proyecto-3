@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Administracion</title>
+    <title>registro</title>
     <link rel="stylesheet" href="src/css/index.css">
     
 
@@ -17,14 +17,14 @@
 
 	<div class="containerForm register">
 	
-				<h2>¡Bienvenido!</h2>
+				<h1>¡Bienvenido!</h1>
 				
 		
 		<div class="informacionForm">
 		  
 		  <div class="informacionChild">
 		   
-		    <h2>Crear cuenta</h2>
+		    <h3>Crear cuenta</h3>
 			
 			
 			<form class="form Register"  id="formRegister" novalidate>
@@ -35,6 +35,12 @@
 				          <input id="name" type="text" placeholder="Nombre usuario " name="name">
 			          </label>
 			    </div>
+                  <div>
+					<label>
+			             <i class='bx bxs-envelope' ></i>
+				         <input id="email" type="email" placeholder="Correo electronico" name="email">
+			        </label>
+				</div>
 			
 			    <div>
 					<label>
@@ -42,6 +48,13 @@
 				         <input id="password" type="password" placeholder="Contraseña" name="password">
 			        </label>
 				</div>
+                <div>
+                    <div>
+                        <label>
+                             <i class='bx bx-lock-alt' ></i>
+                             <input id="admi" type="Codigo" placeholder="Administrador" name="Codigo">
+                        </label>
+                    </div>
 
 			  <button  class="submit" type="submit"  id="registro">Registarse</button>
 			
