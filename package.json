@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "start": "npx parcel index.html",
-    "server": "json-server --watch ./server/db.json --port 3000"
+    "server": "json-server --watch ./server/db.json --port 3000",
+    "melon": ""
   },
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "parcel": "^2.12.0"
-  }
+  },
+  "description": ""
 }
