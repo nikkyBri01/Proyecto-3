@@ -118,6 +118,7 @@ async function updateUser(username,password,id) {
     }
 }
 
+
 async function updateU(username,newusername) {
     let response= await fetch("http://localhost:3000/users/")
     let usuarios= await response.json();
@@ -127,7 +128,6 @@ async function updateU(username,newusername) {
         }
     });
 }
-
 
 
 async function findUser(username,password) {
@@ -140,6 +140,6 @@ async function findUser(username,password) {
     else return console.log("No se encontro el usuario");
 }
 
-//Arreglar Merge
+
 
 export {findUser,updateU,updateUser,addUser,deleteUser,tries,getUsers,removeUser}
