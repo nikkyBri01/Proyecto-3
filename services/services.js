@@ -118,27 +118,3 @@ async function updateUser(username,password,id) {
     }
 }
 
-async function updateU(username,newusername) {
-    let response= await fetch("http://localhost:3000/users/")
-    let usuarios= await response.json();
-    usuarios.forEach(async user => {
-        if (user.username==username) {
-            return await updateUser(newusername,user.password,user.id) 
-        }
-    });
-}
-
-
-
-async function findUser(username,password) {
-    let response= await fetch ("http://localhost:3000/users/");
-    let users= await response.json()
-    let existe=users.some(username&&password);
-    if (existe) {
-        return console.log("Se encontro el usuario y entro");
-    }
-    else return console.log("No se encontro el usuario");
-}
-
-
-
