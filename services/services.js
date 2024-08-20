@@ -107,3 +107,5 @@ async function updateUser(username,password,id) {
         throw error;
     }
 }
+
+export {updateUser,postUsers,getUsers,addUser,tries,removeUser,deleteUser}
