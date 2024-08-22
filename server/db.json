@@ -3,12 +3,32 @@
     {
       "id": "0cbe",
       "username": "Ale",
-      "password": 1234
+      "password": 1234,
+      "admin": true
     },
     {
-      "id": "52c8",
+      "id": "a709",
       "username": "Juan",
-      "password": 1231
+      "password": 12312,
+      "admin": false
+    },
+    {
+      "id": "7d40",
+      "username": "Roberto",
+      "password": 12312,
+      "admin": false
+    },
+    {
+      "id": "c832",
+      "username": "jenny",
+      "password": "555",
+      "admin": true
+    },
+    {
+      "id": "003b",
+      "username": "Jose",
+      "password": "555",
+      "admin": false
     }
   ]
 }
