@@ -1,3 +1,6 @@
+//--------------------------------------------Users---------------------------------------//
+
+
 //-----------------------------------Get------------------------------------//
 
 async function getUsers() {
@@ -128,4 +131,29 @@ async function updateU(username,newusername) {
 
 
 
-export {updateU,updateUser,addUser,deleteUser,tries,getUsers,removeUser}
+export {updateU,updateUser,addUser,deleteUser,tries,getUsers,removeUser,postPeticiones}
+
+
+//--------------------------------------Peticiones------------------------------------------------//
+
+async function postPeticiones(nombre,fechaS,fechaI,digitos) {
+    try {
+      const userData = {
+        nombre,
+        fechaS,
+        fechaI,
+        digitos
+      };
+      const response = await fetch("http://localhost:3000/peticiones", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(userData),
+      });
+      return await response.json();
+    } catch (error) {
+      console.error("Error posting user:", error);
+      throw error;
+    }
+}

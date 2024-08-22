@@ -33,8 +33,7 @@ body{
 	font-size: 1rem;
     text-align: center;
 }
-
-.form label{
+ label{
     display: flex;
     align-items: center;
     background-color: #f3e9e9;
@@ -44,7 +43,7 @@ body{
     padding: 0 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1);  
 }
-.form label input{
+ label input{
    width: 100%;
    padding: 10px;
    background-color: #f3e9e9;
@@ -53,7 +52,7 @@ body{
    border-radius: 20px;
    color: #333;
 }
-form label i{
+label i{
    color: #807c7c;
 }
 .submit{
@@ -93,29 +92,53 @@ form label i{
 	transition: all 1s ease;
 	margin: 10px;
     margin-block-start: 2em;
-    background-image: url();
-    background-size: cover;
+    background-color: #fdffffc2;
+    
     
 
 }
 .informacionChild{
-    margin-block-start: 2em;
+    margin-block-start: 4em;
 }
 .infoChilds{
     text-align: center;
 }
-.containerInfo{
-    background-color: #eadbdb;
-    background-size: cover;
+
+.name{
+     width: 100%;
+   padding: 10px;
+   background-color: #f3e9e9;
+   border: none;
+   outline: none;
+   border-radius: 20px;
+   color: #333;
+   border: 1px solid black;
+
 }
-.inicio{
-    background-color: #efe5e5;
-    height: 200px;
-    width: 700px;
-    margin-left: 15%;
+#password{
+   width: 100%;
+   padding: 10px;
+   background-color: #f3e9e9;
+   border: none;
+   outline: none;
+   border-radius: 20px;
+   color: #333;
 
 
 }
+#inicio{
+     background-color: #12affeeb;
+    color: #fff;
+    border-radius: 20px;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 45px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1); 
+
+}
+
 
 
 

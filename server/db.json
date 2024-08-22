@@ -30,5 +30,17 @@
       "password": "555",
       "admin": false
     }
+  ],
+
+  "peticiones" :[
+    {
+      "nombre": "Jose",
+      "sede": "Nosara",
+      "fechaS":"22/08/2024",
+      "fechaI": "25/08/2024",
+      "digitos": "FV887SF2"
+
+    
+    }
   ]
 }
