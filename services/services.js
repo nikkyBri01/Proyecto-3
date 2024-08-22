@@ -19,8 +19,6 @@ async function tries() {
     } catch (error){console.log("No se pudo conectar"+error);}
 }
 
-
-
 //-----------------------------------Post----------------------------------//
 async function postUsers(username, password,admin) {
     try {
@@ -61,8 +59,6 @@ async function postUsers(username, password,admin) {
     }
 }
 
-
-addUser("Jose","555","0001")
 //---------------------------------Delete----------------------------------//
 async function deleteUser(id) {
     try {
@@ -130,16 +126,6 @@ async function updateU(username,newusername) {
 }
 
 
-async function findUser(username,password) {
-    let response= await fetch ("http://localhost:3000/users/");
-    let users= await response.json()
-    let existe=users.some(username&&password);
-    if (existe) {
-        return console.log("Se encontro el usuario y entro");
-    }
-    else return console.log("No se encontro el usuario");
-}
 
 
-
-export {findUser,updateU,updateUser,addUser,deleteUser,tries,getUsers,removeUser}
+export {updateU,updateUser,addUser,deleteUser,tries,getUsers,removeUser}
