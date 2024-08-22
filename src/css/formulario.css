@@ -1,0 +1,114 @@
+/*permiso */
+.contenido1{
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 800px;
+    height: 230px;
+    margin-left: 18%;
+    background-image: url(img/topImg.jpeg);
+    background-size: cover;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, .1); 
+    
+}
+.contenido2{
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 800px;
+    height: 180px;
+    margin-left: 18%;
+    text-align: center;
+    font-size: 15px;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, .1); 
+
+}
+.contenido3{
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 800px;
+    height: 360px;
+    margin-left: 18%;
+    text-align: justify;
+    font-size: 16px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1); 
+    
+}
+.contenido3 p{
+   margin: 15px;
+   padding: auto;
+}
+.contenido3 h2{
+   margin: 15px;
+   padding: auto;
+   
+}
+.contenido4{
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 800px;
+    height: 150px;
+    margin-left: 18%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1); 
+    
+}
+.contenido5{
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 800px;
+    height: 170px;
+    margin-left: 18%;
+   box-shadow: 0 2px 5px rgba(0, 0, 0, .1); 
+}
+.contenido6{
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 800px;
+    height: 170px;
+    margin-left: 18%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1); 
+       
+}
+.contenido7{
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 800px;
+    height: 180px;
+    margin-left: 18%;
+    text-align: center;
+    font-size: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);   
+}
+.contenido8{
+    background-color: #ffffff;
+    border-radius: 15px;
+    width: 800px;
+    height: 180px;
+    margin-left: 18%;
+    text-align: center;
+    font-size: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1); 
+}    
+#codigo{
+   border-left: none;
+   border-right: none;
+   border-top: none;
+   margin-block-end: 3em;
+   margin-block-start: 3em;
+}
+body{
+    background-color: #efd7d7;
+    justify-content: center;
+    
+}
+#envio{
+    background-color: #12affeeb;
+    color: #fff;
+    border-radius: 14px;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 18%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .1);  
+   
+}
+ 
