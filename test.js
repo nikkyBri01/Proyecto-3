@@ -1,9 +1,14 @@
 
 import {updateU,updateUser,addUser,deleteUser,tries,getUsers,removeUser} from "./services/services.js";
-let logInBtn=document.getElementById("inicio")
-async function findUser(username,password) {
-    console.log("Entre");
-    
+
+//--------------------------------------LogIn-----------------------------------------//
+let inputPass=document.getElementById("password");
+let inputName=document.getElementById("name");
+
+//Funcion que verifica si el usuario existe y si es Admin o Usuario
+window.findUser = async function(username,password) {
+    username=inputName.value;
+    password=inputPass.value;
     let response= await getUsers();
     let usuario= response.find(user => user.username == username&&user.password==password)
     if (usuario) {
@@ -12,10 +17,19 @@ async function findUser(username,password) {
     }
     else return console.log("No se encontro");
 }
+//----------------------------------SignUp--------------------------------------------//
+//Parametros traidos del HTML
+let name = document.getElementById("name");
+let email = document.getElementById("email");
+let password = document.getElementById("password");
+let admin = document.getElementById("admin");
+let sede = document.getElementById("sede");
 
-let inputPass=document.getElementById("password")
-let inputName=document.getElementById("name")
-logInBtn.addEventListener("click", function () {
-    findUser(inputName.value,inputPass.value)
-})
+window.register = function() {
+    if (name.value ==""||email.value==""||password.value==""||admin.value==""||sede.value=="Selecciona tu sede") {
+        return alert("Faltan campos por llenar")
+    }
+    return addUser(name.value,email.value,password.value,admin.value,sede.value)
+};
+
 

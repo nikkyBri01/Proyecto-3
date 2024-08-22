@@ -3,32 +3,34 @@
     {
       "id": "0cbe",
       "username": "Ale",
+      "email": "alejca15@gmail.com",
       "password": "1234",
-      "admin": true
+      "admin": true,
+      "sede": "el Huerto"
     },
     {
-      "id": "a709",
-      "username": "Juan",
-      "password": "12312",
-      "admin": false
-    },
-    {
-      "id": "7d40",
-      "username": "Roberto",
-      "password": "12312",
-      "admin": false
-    },
-    {
-      "id": "c832",
-      "username": "jenny",
-      "password": "555",
-      "admin": true
-    },
-    {
-      "id": "003b",
+      "id": "84e2",
       "username": "Jose",
-      "password": "555",
-      "admin": false
+      "email": "jose@fwd.com",
+      "password": "1234",
+      "admin": true,
+      "sede": "el Huerto"
+    },
+    {
+      "id": "645e",
+      "username": "Juan",
+      "email": "j@fwd.com",
+      "password": "12321",
+      "admin": true,
+      "sede": "2"
+    },
+    {
+      "id": "e549",
+      "username": "J",
+      "email": "js@fwd.com",
+      "password": "12321",
+      "admin": false,
+      "sede": "2"
     }
   ],
 
