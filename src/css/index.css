@@ -2,16 +2,17 @@ body{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 80vh;
-    background-image: url(img/watercolor-rainbow-background-design_23-2149573252.avif);
+	height: 100vh;
+    background-image: url(img/photo-1617957772002-57adde1156fa.jpg);
     background-size: cover;
     background-repeat: no-repeat;
 
 }
 .containerForm{
-    height: 500px;
-	max-width: 900px;
+    height: 470px;
+    width: 500px;
 	display: flex;
+    justify-content: center;
     background-image: url(img/WhatsApp\ Image\ 2024-08-20\ at\ 11.17.58\ AM.jpeg);
     background-size: cover;
 	border-radius: 20px;
@@ -21,15 +22,16 @@ body{
     
 }
 
+
 .informacionForm{
-	margin-right: 100px;
-    margin-block-start: 7em;
+    margin-block-start: 2.5em;
 	
 
 }
 .informacionChild h3{
 	color: rgb(243, 239, 243);
-	font-size: 1.4rem;
+	font-size: 1rem;
+    text-align: center;
 }
 
 .form label{
@@ -68,5 +70,53 @@ form label i{
 }
 .submit:hover{
    background-color: #333;
-}   
+}  
+.form-select {
+    width: 100%;
+   padding: 10px;
+   background-color: #f3e9e9;
+   border: none;
+   outline: none;
+   border-radius: 20px;
+   color: #333;
+
+}
+/*login*/
+
+.informacionForm{
+    height: 320px;
+    width: 430px;
+	display: flex;
+    justify-content: center;
+	border-radius: 20px;
+	box-shadow: 0 5px 7px rgba(0, 0, 0, .1);
+	transition: all 1s ease;
+	margin: 10px;
+    margin-block-start: 2em;
+    background-image: url();
+    background-size: cover;
+    
+
+}
+.informacionChild{
+    margin-block-start: 2em;
+}
+.infoChilds{
+    text-align: center;
+}
+.containerInfo{
+    background-color: #eadbdb;
+    background-size: cover;
+}
+.inicio{
+    background-color: #efe5e5;
+    height: 200px;
+    width: 700px;
+    margin-left: 15%;
+
+
+}
+
+
+
 
