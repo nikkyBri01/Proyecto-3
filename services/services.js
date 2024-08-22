@@ -20,12 +20,14 @@ async function tries() {
 }
 
 //-----------------------------------Post----------------------------------//
-async function postUsers(username, password,admin) {
+async function postUsers(username,email,password,admin,sede) {
     try {
       const userData = {
         username,
+        email,
         password,
-        admin
+        admin,
+        sede
       };
       const response = await fetch("http://localhost:3000/users", {
         method: "POST",
@@ -41,7 +43,7 @@ async function postUsers(username, password,admin) {
     }
 }
 //Añadir usuarions si no existen aun
- async function addUser(username, password,codigo) {  
+ async function addUser(username,email,password,codigo,sede) {  
     let admin=false;
     if (codigo=="0000") {
         admin=true
@@ -52,13 +54,12 @@ async function postUsers(username, password,admin) {
         if (userExist) {
             return console.log("Ya existe el usuario");    
         }
-        else {await postUsers(username,password,admin);
+        else {await postUsers(username,email,password,admin,sede);
         console.log("Se añadio el usuario");}
     } catch (error) {
         return console.log("Error en la funcion update", error);
     }
 }
-
 //---------------------------------Delete----------------------------------//
 async function deleteUser(id) {
     try {
@@ -85,18 +86,20 @@ async function removeUser(username) {
         if (user.username==username) {
             return await deleteUser(user.id) 
         }
-
     });
     
 }
 
 //----------------------------------Update---------------------------------//
 
-async function updateUser(username,password,id) {
+async function updateUser(username,password,email, admin,sede,id) {
     let user={
         id,
         username,
-        password
+        email,
+        password,
+        admin,
+        sede
     }
     try {
         let response = await fetch("http://localhost:3000/users/"+id,{
