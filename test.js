@@ -7,7 +7,7 @@ async function findUser(username,password) {
     let response= await getUsers();
     let usuario= response.find(user => user.username == username&&user.password==password)
     if (usuario) {
-        if(usuario.admin==true){window.location.href= "admin.html";} 
+        if(usuario.admin==true){window.location.href= "http://localhost:8000/admin.html";} 
         else {window.location.href="usuarios.html"};
     }
     else return console.log("No se encontro");

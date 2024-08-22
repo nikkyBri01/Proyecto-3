@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>registro</title>
+    <link rel="stylesheet" href="src/css/index.css">
+    
+
+</head>
+<body>
+
+	<div class="containerForm register">
+ 
+		  <div class="informacionChild">
+			
+			<h1>¡Bienvenido!</h1>
+		   
+		    <h3>Crear cuenta</h3>
+			    
+			    <div>
+				     <label>
+			              <i class='bx bx-user-pin'></i>
+				          <input id="name" type="text" placeholder="Nombre usuario " name="name">
+			          </label>
+			    </div>
+                  <div>
+					<label>
+			             <i class='bx bxs-envelope' ></i>
+				         <input id="email" type="email" placeholder="Correo electronico" name="email">
+			        </label>
+				</div>
+			
+			    <div>
+					<label>
+			             <i class='bx bx-lock-alt' ></i>
+				         <input id="password" type="password" placeholder="Contraseña" name="password">
+			        </label>
+				</div>
+                <div>
+                    <div>
+                        <label>
+                             <i class='bx bx-lock-alt' ></i>
+                             <input id="admi" type="Codigo" placeholder="Administrador" name="Codigo">
+                        </label>
+
+                        <select class="form-select" aria-label="Default select example">
+                             <option selected>Selcciona tu sede</option>
+                             <option value="1">Sede Nosara</option>
+                             <option value="2">Sede el Huerto</option>
+                             <option value="3">Sede Santa Ana</option>
+                        </select>
+                    </div>
+
+			  <button  class="submit" type="submit"  id="registro">Registarse</button>
+		  
+		  </div>
+		
+		</div>
+	</div>
+</div>
+
+	
+  <script src="test.js" type="module"></script>
+  
+    
+</body>
+</html>
