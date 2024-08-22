@@ -19,8 +19,6 @@ async function tries() {
     } catch (error){console.log("No se pudo conectar"+error);}
 }
 
-
-
 //-----------------------------------Post----------------------------------//
 async function postUsers(username, password,admin) {
     try {
@@ -61,8 +59,6 @@ async function postUsers(username, password,admin) {
     }
 }
 
-
-addUser("Jose","555","0001")
 //---------------------------------Delete----------------------------------//
 async function deleteUser(id) {
     try {
@@ -118,3 +114,18 @@ async function updateUser(username,password,id) {
     }
 }
 
+
+async function updateU(username,newusername) {
+    let response= await fetch("http://localhost:3000/users/")
+    let usuarios= await response.json();
+    usuarios.forEach(async user => {
+        if (user.username==username) {
+            return await updateUser(newusername,user.password,user.id) 
+        }
+    });
+}
+
+
+
+
+export {updateU,updateUser,addUser,deleteUser,tries,getUsers,removeUser}

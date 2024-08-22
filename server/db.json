@@ -3,19 +3,19 @@
     {
       "id": "0cbe",
       "username": "Ale",
-      "password": 1234,
+      "password": "1234",
       "admin": true
     },
     {
       "id": "a709",
       "username": "Juan",
-      "password": 12312,
+      "password": "12312",
       "admin": false
     },
     {
       "id": "7d40",
       "username": "Roberto",
-      "password": 12312,
+      "password": "12312",
       "admin": false
     },
     {
