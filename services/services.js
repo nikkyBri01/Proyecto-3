@@ -22,6 +22,16 @@ async function tries() {
     } catch (error){console.log("No se pudo conectar"+error);}
 }
 
+async function findUser(username) {
+    let response= await fetch("http://localhost:3000/users/")
+    let usuarios= await response.json();
+    usuarios.forEach(async user => {
+        if (user.username==username) {
+            return await fetch ("http://localhost:3000/users/")+user.id
+        }
+    });
+}
+
 //-----------------------------------Post----------------------------------//
 async function postUsers(username,email,password,admin,sede) {
     try {
@@ -123,6 +133,7 @@ async function updateUser(username,password,email, admin,sede,id) {
 async function updateU(username,newusername) {
     let response= await fetch("http://localhost:3000/users/")
     let usuarios= await response.json();
+    
     usuarios.forEach(async user => {
         if (user.username==username) {
             return await updateUser(newusername,user.password,user.id) 
@@ -133,7 +144,6 @@ async function updateU(username,newusername) {
 
 //--------------------------------------Peticiones------------------------------------------------//
 
-import { solicitud } from "../app.js";
 //----------------------------------------------Get-----------------------------------------------//
 async function getPeticiones() {
     return new Promise (async(resolve,reject)=>{
@@ -193,7 +203,7 @@ async function eliminarPeticion(id) {
 }
 
 //-------------------------------------Update-----------------------------------------//
-
+/*
 async function updatePeticion(nombre,sede,fechaS,fechaE,codigo,estado,id) {
     let peticion= new solicitud(nombre,sede,fechaS,fechaE,codigo)
     peticion.id=id; peticion.estado=estado;
@@ -213,8 +223,6 @@ async function updatePeticion(nombre,sede,fechaS,fechaE,codigo,estado,id) {
     }
 }
 
-updatePeticion("Ale","Santa Ana","22/08/2024","25/08/2024","3fa2","Aceptada","2a66")
-
 async function updateP(username,newusername) {
     let response= await fetch("http://localhost:3000/users/")
     let usuarios= await response.json();
@@ -223,7 +231,7 @@ async function updateP(username,newusername) {
             return await updateUser(newusername,user.password,user.id) 
         }
     });
-}
+}*/
 
 
-export {updateU,postUsers,updateUser,addUser,deleteUser,tries,getUsers,removeUser,postPeticiones,tryPeticion,eliminarPeticion,getPeticiones,updatePeticion}
+export {updateU,postUsers,updateUser,addUser,deleteUser,tries,getUsers,removeUser,postPeticiones,tryPeticion,eliminarPeticion,getPeticiones}
