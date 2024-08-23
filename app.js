@@ -1,4 +1,4 @@
-import {updateUser,postUsers,getUsers,addUser,tries,removeUser,deleteUser,postPeticiones,eliminarPeticion,getPeticion,tryPeticion1} from "./services/services.js";
+import {updateUser,postUsers,getUsers,addUser,tries,removeUser,deleteUser,postPeticiones,eliminarPeticion} from "./services/services.js";
 
 class solicitud {
     constructor(nombre,sede,fechaS,fechaE,codigo,estado) {

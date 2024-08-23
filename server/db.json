@@ -60,13 +60,13 @@
       "estado": "Pendiente"
     },
     {
-      "id": "2a66",
-      "nombre": "jenny",
-      "sede": "el Huerto",
+      "nombre": "Ale",
+      "sede": "Santa Ana",
       "fechaS": "22/08/2024",
       "fechaE": "25/08/2024",
       "codigo": "3fa2",
-      "estado": "Pendiente"
+      "estado": "Aceptada",
+      "id": "2a66"
     }
   ]
 }
