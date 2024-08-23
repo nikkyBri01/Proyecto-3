@@ -89,8 +89,7 @@ async function removeUser(username) {
         if (user.username==username) {
             return await deleteUser(user.id) 
         }
-    });
-    
+    }); 
 }
 
 //----------------------------------Update---------------------------------//
@@ -132,21 +131,31 @@ async function updateU(username,newusername) {
 }
 
 
-
-
-export {updateU,updateUser,addUser,deleteUser,tries,getUsers,removeUser,postPeticiones}
-
-
 //--------------------------------------Peticiones------------------------------------------------//
+//----------------------------------------------Get-----------------------------------------------//
+async function getPeticiones() {
+    return new Promise (async(resolve,reject)=>{
+        let response= await fetch("http://localhost:3000/peticiones");
+        if (response) {
+            let peticion=response.json();
+            return resolve(peticion)
+        }
+        else {
+            reject (new Error("No entro"))
+        }
+    })
+}
 
-async function postPeticiones(nombre,fechaS,fechaI,digitos) {
+async function tryPeticion() {
+    try {let peticiones= await getPeticiones();
+        console.log(peticiones);
+    } catch (error){console.log("No se pudo conectar"+error);}
+}
+
+
+//-----------------------------------------------Post-----------------------------------------------//
+async function postPeticiones(userData) {
     try {
-      const userData = {
-        nombre,
-        fechaS,
-        fechaI,
-        digitos
-      };
       const response = await fetch("http://localhost:3000/peticiones", {
         method: "POST",
         headers: {
@@ -160,3 +169,64 @@ async function postPeticiones(nombre,fechaS,fechaI,digitos) {
       throw error;
     }
 }
+
+//------------------------------------Delete----------------------------------------//
+
+async function eliminarPeticion(id) {
+    try {
+        let response= await fetch ("http://localhost:3000/peticiones/"+id, { 
+        method: 'DELETE',
+            headers: {'Content-Type': 'application/json'}
+        });
+        console.log(response);
+        
+    if (!response.ok) {
+        throw new Error("No se ejecuto");
+    }
+    return { message: `Peticion with id ${id} deleted successfully` };
+    } catch (error) {
+        console.error('Error deleting user:', error);
+        throw error;
+    } 
+}
+
+//-------------------------------------Update-----------------------------------------//
+
+async function updatePeticion(nombre,sede,fechaS,fechaE,codigo,estado,id) {
+    let user={
+        nombre,
+        sede,
+        fechaS,
+        fechaE,
+        codigo,
+        estado
+    }
+    try {
+        let response = await fetch("http://localhost:3000/peticiones/"+id,{
+            method: "PUT",
+            headers: {"Content-Type":"application/json"},
+            body: JSON.stringify(user)
+        });
+        if (!response.ok) {
+            throw new Error("No se pudo conectar",Error);
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Error updating user:', error);
+        throw error;
+    }
+}
+
+
+async function updateP(username,newusername) {
+    let response= await fetch("http://localhost:3000/users/")
+    let usuarios= await response.json();
+    usuarios.forEach(async user => {
+        if (user.username==username) {
+            return await updateUser(newusername,user.password,user.id) 
+        }
+    });
+}
+
+
+export {updateU,postUsers,updateUser,addUser,deleteUser,tries,getUsers,removeUser,postPeticiones,tryPeticion,eliminarPeticion,getPeticion,tryPeticion1}

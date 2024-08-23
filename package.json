@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "start": "npx parcel index.html --port 8000",
-    "reg": "npx parcel register.html --port 8080",
+    "reg": "npx parcel formulario.html --port 8080",
     "server": "json-server --watch ./server/db.json --port 3000",
     "melon": ""
   },

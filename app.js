@@ -1,14 +1,23 @@
-import {updateUser,postUsers,getUsers,addUser,tries,removeUser,deleteUser} from "./services/services.js";
+import {updateUser,postUsers,getUsers,addUser,tries,removeUser,deleteUser,postPeticiones,eliminarPeticion,getPeticion,tryPeticion1} from "./services/services.js";
 
 class solicitud {
-    constructor(nombre,sede,fechaS,fechaE,codigo) {
+    constructor(nombre,sede,fechaS,fechaE,codigo,estado) {
         this.nombre=nombre;
         this.sede=sede;
         this.fechaS=fechaS;
         this.fechaE=fechaE;
         this.codigo=codigo;
+        this.estado="Pendiente";
     }
     eliminar(){
-        
+        eliminarPeticion(this.id)
     }
 }
+
+
+
+
+
+
+
+
