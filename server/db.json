@@ -31,18 +31,42 @@
       "password": "12321",
       "admin": false,
       "sede": "2"
+    },
+    {
+      "id": "a48a",
+      "username": "Nico",
+      "email": "n@fwd.com",
+      "password": "123",
+      "admin": true,
+      "sede": "Nosara"
+    },
+    {
+      "id": "0b4f",
+      "username": "Nikky",
+      "email": "na@fwd.com",
+      "password": "123",
+      "admin": false,
+      "sede": "Nosara"
     }
   ],
-
-  "peticiones" :[
+  "peticiones": [
     {
-      "nombre": "Jose",
-      "sede": "Nosara",
-      "fechaS":"22/08/2024",
-      "fechaI": "25/08/2024",
-      "digitos": "FV887SF2"
-
-    
+      "id": "7f94",
+      "nombre": "jenny",
+      "sede": "el Huerto",
+      "fechaS": "22/08/2024",
+      "fechaE": "25/08/2024",
+      "codigo": "FV887SF2",
+      "estado": "Pendiente"
+    },
+    {
+      "id": "2a66",
+      "nombre": "jenny",
+      "sede": "el Huerto",
+      "fechaS": "22/08/2024",
+      "fechaE": "25/08/2024",
+      "codigo": "3fa2",
+      "estado": "Pendiente"
     }
   ]
 }
