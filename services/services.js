@@ -132,6 +132,8 @@ async function updateU(username,newusername) {
 
 
 //--------------------------------------Peticiones------------------------------------------------//
+
+import { solicitud } from "../app.js";
 //----------------------------------------------Get-----------------------------------------------//
 async function getPeticiones() {
     return new Promise (async(resolve,reject)=>{
@@ -193,19 +195,13 @@ async function eliminarPeticion(id) {
 //-------------------------------------Update-----------------------------------------//
 
 async function updatePeticion(nombre,sede,fechaS,fechaE,codigo,estado,id) {
-    let user={
-        nombre,
-        sede,
-        fechaS,
-        fechaE,
-        codigo,
-        estado
-    }
+    let peticion= new solicitud(nombre,sede,fechaS,fechaE,codigo)
+    peticion.id=id; peticion.estado=estado;
     try {
         let response = await fetch("http://localhost:3000/peticiones/"+id,{
             method: "PUT",
             headers: {"Content-Type":"application/json"},
-            body: JSON.stringify(user)
+            body: JSON.stringify(peticion)
         });
         if (!response.ok) {
             throw new Error("No se pudo conectar",Error);
@@ -217,6 +213,7 @@ async function updatePeticion(nombre,sede,fechaS,fechaE,codigo,estado,id) {
     }
 }
 
+updatePeticion("Ale","Santa Ana","22/08/2024","25/08/2024","3fa2","Aceptada","2a66")
 
 async function updateP(username,newusername) {
     let response= await fetch("http://localhost:3000/users/")
@@ -229,4 +226,4 @@ async function updateP(username,newusername) {
 }
 
 
-export {updateU,postUsers,updateUser,addUser,deleteUser,tries,getUsers,removeUser,postPeticiones,tryPeticion,eliminarPeticion,getPeticion,tryPeticion1}
+export {updateU,postUsers,updateUser,addUser,deleteUser,tries,getUsers,removeUser,postPeticiones,tryPeticion,eliminarPeticion,getPeticiones}
