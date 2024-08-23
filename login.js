@@ -1,3 +1,6 @@
+
+import {updateUser,postUsers,getUsers,addUser,tries,removeUser,deleteUser,postPeticiones,eliminarPeticion} from "./services/services.js";
+
 //--------------------------------------LogIn-----------------------------------------//
 let inputPass=document.getElementById("password");
 let inputName=document.getElementById("name");
@@ -14,3 +17,4 @@ window.findUser = async function(username,password) {
     }
     else return console.log("No se encontro");
 }
+

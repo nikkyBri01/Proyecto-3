@@ -1,7 +1,6 @@
 
 import {updateU,updateUser,addUser,deleteUser,tries,getUsers,removeUser, eliminarPeticion} from "./services/services.js";
 
-
 //-----------------------------Admin------------------------------------//
 //Iniciador de clase solicitud
 class solicitud {
@@ -21,7 +20,5 @@ class solicitud {
 let nameCont=document.getElementById("nombreForm")
 nameCont.innerHTML=inputName.value;
 
-
 export {solicitud}
 
-    

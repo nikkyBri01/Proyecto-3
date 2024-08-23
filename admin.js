@@ -1,8 +1,5 @@
 const contenedorSolicitud= document.getElementById("containerSolicitud");
 
-
-
-
 let cargarSolicitudes= async ()=> {
    const solicitudes = await getPeticiones();
    solicitudes.forEach(solicitud => {
@@ -28,8 +25,9 @@ let cargarSolicitudes= async ()=> {
    conten.appendChild(Aceptar);
 
    Aceptar.addEventListener("click", function () {
-      eliminarPeticion(solicitud.id)
+      updatePeticion(solicitud.nombre,solicitud.sede,solicitud.fechaS,solicitud.fechaE,solicitud.codigo,"Aceptada",solicitud.id)
       estadoCont.innerHTML="Estado de la solicitud: Aceptada"
+
    })
   
    let Denegar = document.createElement("button")
@@ -39,7 +37,7 @@ let cargarSolicitudes= async ()=> {
    conten.appendChild(Denegar);
 
    Denegar.addEventListener("click", function () {
-      solicitud.remove(solicitud.id);
+      updatePeticion(solicitud.nombre,solicitud.sede,solicitud.fechaS,solicitud.fechaE,solicitud.codigo,"Denegado",solicitud.id)
       estadoCont.innerHTML="Estado de la solicitud: Denegada"
    })
 });
