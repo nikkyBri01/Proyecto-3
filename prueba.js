@@ -24,8 +24,20 @@ solicitudes.forEach(solicitud => {
 
      conten.append(Aceptar);
 
-     
+     Aceptar.addEventListener("click", function () {
+        updatePeticion(solicitud.nombre,solicitud.sede,solicitud.fechaS,solicitud.fechaE,solicitud.codigo,"Aceptada",solicitud.id)
+        
+     })
     
+     let Denegar = document.createElement("button")
+     Denegar.innerText = "Denegar solicitud"
+     Denegar.className = "Denegar"
+
+     conten.append(Denegar);
+
+     Denegar.addEventListener("click", function () {
+        updatePeticion(solicitud.nombre,solicitud.sede,solicitud.fechaS,solicitud.fechaE,solicitud.codigo,"Denegado",solicitud.id)
+     })
 });
 
 
@@ -42,4 +54,4 @@ solicitudes.forEach(solicitud => {
 
 
 
-export {postPeticiones,tryPeticion,eliminarPeticion,getPeticiones,tryPeticion1}
+import {postPeticiones,tryPeticion,eliminarPeticion,getPeticiones,tryPeticion1,updatePeticion} from "services/services.js";

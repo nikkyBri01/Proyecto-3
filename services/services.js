@@ -226,4 +226,4 @@ async function updateP(username,newusername) {
 }
 
 
-export {updateU,postUsers,updateUser,addUser,deleteUser,tries,getUsers,removeUser,postPeticiones,tryPeticion,eliminarPeticion,getPeticiones}
+export {updateU,postUsers,updateUser,addUser,deleteUser,tries,getUsers,removeUser,postPeticiones,tryPeticion,eliminarPeticion,getPeticiones,updatePeticion}
