@@ -1,3 +1,4 @@
+
 import {updateUser,postUsers,getUsers,addUser,tries,removeUser,deleteUser,postPeticiones,eliminarPeticion} from "./services/services.js";
 
 //--------------------------------------LogIn-----------------------------------------//
@@ -12,15 +13,8 @@ window.findUser = async function(username,password) {
     let usuario= response.find(user => user.username == username&&user.password==password)
     if (usuario) {
         if(usuario.admin==true){window.location.href= "http://localhost:8000/admin.html";} 
-        else {window.location.href="usuarios.html"};
+        else {window.location.href="http://localhost:8000/formulario.html"};
     }
     else return console.log("No se encontro");
 }
-
-
-
-
-
-
-
 

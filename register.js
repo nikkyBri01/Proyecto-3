@@ -1,4 +1,5 @@
-import {updateU,updateUser,addUser,deleteUser,tries,getUsers,removeUser} from "./services/services.js";
+
+import {updateU,updateUser,addUser,deleteUser,tries,getUsers,removeUser, eliminarPeticion} from "./services/services.js";
 
 //----------------------------------SignUp--------------------------------------------//
 //Parametros traidos del HTML
@@ -14,3 +15,4 @@ window.register = function() {
     }
     return addUser(name.value,email.value,password.value,admin.value,sede.value)
 };
+

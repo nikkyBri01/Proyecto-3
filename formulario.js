@@ -1,6 +1,8 @@
 
-import {updateU,updateUser,addUser,deleteUser,tries,getUsers,removeUser} from "./services/services.js";
+import {updateU,updateUser,addUser,deleteUser,tries,getUsers,removeUser, eliminarPeticion} from "./services/services.js";
 
+//-----------------------------Admin------------------------------------//
+//Iniciador de clase solicitud
 class solicitud {
     constructor(nombre,sede,fechaS,fechaE,codigo,estado) {
         this.nombre=nombre;
@@ -10,9 +12,13 @@ class solicitud {
         this.codigo=codigo;
         this.estado="Pendiente";
     }
-    eliminar(){
-        eliminarPeticion(this.id)
+    remove(id){
+        eliminarPeticion(id)
     }
 }
+//Obtencion de valores para la solicitud
+let nameCont=document.getElementById("nombreForm")
+nameCont.innerHTML=inputName.value;
 
 export {solicitud}
+
