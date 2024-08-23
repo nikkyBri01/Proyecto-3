@@ -21,15 +21,12 @@ body{
 	margin: 10px;
     
 }
-
-
 .informacionForm{
     margin-block-start: 2.5em;
-	
 
 }
 .informacionChild h3{
-	color: rgb(243, 239, 243);
+	color: rgb(156, 29, 156);
 	font-size: 1rem;
     text-align: center;
 }
@@ -98,10 +95,11 @@ label i{
 
 }
 .informacionChild{
-    margin-block-start: 4em;
+    margin-block-start: 2em;
 }
 .infoChilds{
     text-align: center;
+
 }
 
 .name{
@@ -134,11 +132,19 @@ label i{
     padding: 10px 15px;
     cursor: pointer;
     margin-top: 10px;
-    margin-left: 45px;
+    margin-left: 60px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1); 
 
 }
-
+#codigo{
+    width: 100%;
+    padding: 10px;
+    background-color: #f3e9e9;
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    color: #333; 
+}
 
 
 
