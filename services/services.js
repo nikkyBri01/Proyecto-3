@@ -133,7 +133,7 @@ async function updateU(username,newusername) {
 
 //--------------------------------------Peticiones------------------------------------------------//
 
-import { solicitud } from "../app.js";
+import { solicitud } from "../login.js";
 //----------------------------------------------Get-----------------------------------------------//
 async function getPeticiones() {
     return new Promise (async(resolve,reject)=>{

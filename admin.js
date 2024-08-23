@@ -1,8 +1,6 @@
 const contenedorSolicitud= document.getElementById("containerSolicitud");
 
 
-
-
 let cargarSolicitudes= async ()=> {
    const solicitudes = await getPeticiones();
    solicitudes.forEach(solicitud => {
@@ -11,11 +9,11 @@ let cargarSolicitudes= async ()=> {
       conten.innerHTML = `
       <h2>${solicitud.id}</h2>
       <h3>${solicitud.nombre}</h3>
-      <p>₡${solicitud.sede}</p>
-      <p>₡${solicitud.fechaS}</p>
-      <p>₡${solicitud.fechaE}</p>
-      <p>₡${solicitud.codigo}</p>
-      <p>₡${solicitud.estado}</p>
+      <p>${solicitud.sede}</p>
+      <p>${solicitud.fechaS}</p>
+      <p>${solicitud.fechaE}</p>
+      <p>${solicitud.codigo}</p>
+      <p>${solicitud.estado}</p>
       `;
    
       contenedorSolicitud.appendChild(conten);

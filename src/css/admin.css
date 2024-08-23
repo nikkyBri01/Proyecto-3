@@ -41,8 +41,9 @@ footer{
    margin-top: auto
 }
 
-.containerSolicitud{
+#containerSolicitud{
     display: flex;
+    flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
     margin-top: 30px;
@@ -66,7 +67,7 @@ footer{
     font-size: 20px;
 } 
 .Aceptar{
-    background-color: rgba(11, 70, 199, 0.877);
+    background-color: rgba(47, 233, 10, 0.877);
     border: none;
     outline: 0;
     padding: 12px;
@@ -80,7 +81,7 @@ footer{
      
 } 
 .Denegar{
-    background-color: rgba(11, 70, 199, 0.877);
+    background-color: rgba(238, 78, 4, 0.877);
     border: none;
     outline: 0;
     padding: 12px;

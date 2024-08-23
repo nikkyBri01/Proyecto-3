@@ -1,4 +1,5 @@
-import {updateUser,postUsers,getUsers,addUser,tries,removeUser,deleteUser,postPeticiones,eliminarPeticion} from "./services/services.js";
+
+import {updateU,updateUser,addUser,deleteUser,tries,getUsers,removeUser} from "./services/services.js";
 
 class solicitud {
     constructor(nombre,sede,fechaS,fechaE,codigo,estado) {
@@ -15,10 +16,3 @@ class solicitud {
 }
 
 export {solicitud}
-
-
-
-
-
-
-
