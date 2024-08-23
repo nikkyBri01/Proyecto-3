@@ -44,14 +44,4 @@ solicitudes.forEach(solicitud => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-import {postPeticiones,tryPeticion,eliminarPeticion,getPeticiones,tryPeticion1,updatePeticion} from "services/services.js";
+import {postPeticiones,tryPeticion,eliminarPeticion,getPeticiones,tryPeticion1,updatePeticion} from "/services/services.js";

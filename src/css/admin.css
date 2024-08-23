@@ -40,6 +40,7 @@ footer{
    box-shadow: 0 2px 2px 2px rgba(66, 66, 65, 0.87);
    margin-top: auto
 }
+
 .containerSolicitud{
     display: flex;
     justify-content: space-around;
@@ -47,4 +48,48 @@ footer{
     margin-top: 30px;
     margin-left: 80px;
     margin-right: 80px;
-}    
+}  
+.tarjetas{
+    box-shadow: 0 2px 3px 3px rgba(165, 165, 161, 0.63);
+    max-width: 240px;
+    margin: auto;
+    border-radius: 5px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(0, 0, 0);  
+    margin-block-end: 2em;
+    background-color: rgba(240, 248, 255, 0.884);
+
+}
+.tarjetas P{
+    color: rgb(91, 91, 110);
+    font-size: 20px;
+} 
+.Aceptar{
+    background-color: rgba(11, 70, 199, 0.877);
+    border: none;
+    outline: 0;
+    padding: 12px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    color: aliceblue;
+}
+.Aceptar:hover{
+   opacity: 0.7;
+     
+} 
+.Denegar{
+    background-color: rgba(11, 70, 199, 0.877);
+    border: none;
+    outline: 0;
+    padding: 12px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    color: aliceblue;
+}
+.Denegar:hover{
+   opacity: 0.7;
+     
+} 
