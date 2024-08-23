@@ -14,6 +14,7 @@ class solicitud {
     }
 }
 
+export {solicitud}
 
 
 

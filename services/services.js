@@ -132,6 +132,8 @@ async function updateU(username,newusername) {
 
 
 //--------------------------------------Peticiones------------------------------------------------//
+
+import { solicitud } from "../app.js";
 //----------------------------------------------Get-----------------------------------------------//
 async function getPeticiones() {
     return new Promise (async(resolve,reject)=>{
@@ -193,14 +195,7 @@ async function eliminarPeticion(id) {
 //-------------------------------------Update-----------------------------------------//
 
 async function updatePeticion(nombre,sede,fechaS,fechaE,codigo,estado,id) {
-    let user={
-        nombre,
-        sede,
-        fechaS,
-        fechaE,
-        codigo,
-        estado
-    }
+    let user= new solicitud(nombre,sede,fechaS,fechaE,codigo)
     try {
         let response = await fetch("http://localhost:3000/peticiones/"+id,{
             method: "PUT",
