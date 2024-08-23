@@ -51,13 +51,13 @@
   ],
   "peticiones": [
     {
-      "id": "7f94",
       "nombre": "jenny",
       "sede": "el Huerto",
       "fechaS": "22/08/2024",
       "fechaE": "25/08/2024",
       "codigo": "FV887SF2",
-      "estado": "Pendiente"
+      "estado": "Aceptada",
+      "id": "7f94"
     },
     {
       "nombre": "Ale",
