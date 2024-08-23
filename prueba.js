@@ -45,18 +45,4 @@ let cargarSolicitudes= async ()=> {
 }
 cargarSolicitudes()
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import {postPeticiones,tryPeticion,eliminarPeticion,getPeticiones,tryPeticion1,updatePeticion} from "/services/services.js";
