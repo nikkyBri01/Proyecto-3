@@ -1,3 +1,4 @@
+import {updateUser,postUsers,getUsers,addUser,tries,removeUser,deleteUser,postPeticiones,eliminarPeticion} from "./services/services.js";
 const contenedorSolicitud= document.getElementById("containerSolicitud");
 
 let cargarSolicitudes= async ()=> {

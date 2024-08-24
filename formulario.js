@@ -22,3 +22,37 @@ nameCont.innerHTML=inputName.value;
 
 export {solicitud}
 
+const contenedorModal = document.getElementById("contenedorModal")
+const buttonEnviar = document.getElementById("envio")
+
+buttonEnviar.addEventListener("click" ,() => {
+    contenedorModal.innerHTML = "";
+    const modalHeader = document.createElement("div");
+    contenedorModal.style.display = "block";
+    modalHeader.className = "modal"
+    modalHeader.innerHTML = `
+         <h1>Envio de Formulario</h1>
+    `;
+
+    contenedorModal.append(modalHeader);
+
+    const modalButton = document.createElement("h1")
+    modalButton.innerText = "X";
+    modalButton.className = "modal-button";
+
+    modalButton.addEventListener("click", () =>{
+      contenedorModal.style.display = "none";
+
+      const modalMain = document.createElement("h2")
+      modalButton.innerText = "Su envio fue exitoso";
+      modalButton.className = "mensaje";
+    })
+    modalHeader.append(modalButton);
+    contenedorModal.append(modalMain);
+
+})
+
+
+
+
+
