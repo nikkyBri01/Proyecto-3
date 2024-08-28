@@ -1,5 +1,6 @@
 
 import {updateU,updateUser,addUser,deleteUser,tries,getUsers,removeUser, eliminarPeticion} from "./services/services.js";
+import { nombreUsuario} from "./login.js";
 
 //-----------------------------Admin------------------------------------//
 //Iniciador de clase solicitud
@@ -12,13 +13,11 @@ class solicitud {
         this.codigo=codigo;
         this.estado="Pendiente";
     }
-    remove(id){
-        eliminarPeticion(id)
-    }
 }
-//Obtencion de valores para la solicitud
-let nameCont=document.getElementById("nombreForm")
-nameCont.innerHTML=inputName.value;
+let contenedorNombre=document.getElementById("nombreForm");
+let nombreUsuario=nombreUsuario.nombre
+contenedorNombre.innerHTML=nombreUsuario;
+
 
 export {solicitud}
 
