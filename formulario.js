@@ -44,8 +44,8 @@ buttonEnviar.addEventListener("click" ,() => {
       contenedorModal.style.display = "none";
 
       const modalMain = document.createElement("h2")
-      modalButton.innerText = "Su envio fue exitoso";
-      modalButton.className = "mensaje";
+      modalMain.innerText = "Su envio fue exitoso";
+      modalMain.className = "mensaje";
     })
     modalHeader.append(modalButton);
     contenedorModal.append(modalMain);
