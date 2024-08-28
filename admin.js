@@ -1,3 +1,6 @@
+// import {updateUser,postUsers,getUsers,addUser,tries,removeUser,deleteUser,postPeticiones,eliminarPeticion} from "./services/services.js";
+import {postPeticiones,tryPeticion,eliminarPeticion,getPeticiones,tryPeticion1, } from "/services/services.js";
+
 const contenedorSolicitud= document.getElementById("containerSolicitud");
 let tryGet=async ()=> {let respuesta= await getPeticiones(); return respuesta}
 
@@ -75,4 +78,3 @@ filterIn.addEventListener("input",async ()=>{
       cargarSolicitudes(filtrado);
 })
 
-import {postPeticiones,tryPeticion,eliminarPeticion,getPeticiones,tryPeticion1,updatePeticion} from "/services/services.js";
