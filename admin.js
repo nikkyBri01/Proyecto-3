@@ -1,7 +1,8 @@
 const contenedorSolicitud= document.getElementById("containerSolicitud");
+let tryGet=async ()=> {let respuesta= await getPeticiones(); return respuesta}
 
-let cargarSolicitudes= async ()=> {
-   const solicitudes = await getPeticiones();
+//Carga la solicitudes y las muestra en pantalla dado un array en especifico
+let cargarSolicitudes= async (solicitudes)=> {
    solicitudes.forEach(solicitud => {
       let conten = document.createElement("div");
       conten.className = "tarjetas"
@@ -41,8 +42,37 @@ let cargarSolicitudes= async ()=> {
       estadoCont.innerHTML="Estado de la solicitud: Denegada"
    })
 });
-
 }
-cargarSolicitudes()
+
+//Muestra las solicitudes pasando el array inicial
+let displaySoli=async()=>{
+   try {
+      let solicitudes=await tryGet();
+      cargarSolicitudes(solicitudes);  
+   } catch (error) {
+      console.log("error al cargar solicitudes",error);
+   }
+}
+displaySoli()
+
+//Se obtienen los datos del filtro
+let filterIn=document.getElementById("inputFilter")
+//funcion que limpia un contenedor traido del HTML
+
+//Se añade la funcionalidad del filter
+filterIn.addEventListener("input",async ()=>{
+   let valor=filterIn.value.trim();
+   let peticiones= await getPeticiones();
+   let filtrado= peticiones.filter(peticion=>
+      peticion.nombre.toLowerCase().includes(valor.toLowerCase())||
+      peticion.sede.toLowerCase().includes(valor.toLowerCase())||
+      peticion.fechaE.toLowerCase().includes(valor.toLowerCase())||
+      peticion.fechaS.toLowerCase().includes(valor.toLowerCase())||
+      peticion.codigo.toLowerCase().includes(valor.toLowerCase()))
+      while (contenedorSolicitud.firstChild) {
+         contenedorSolicitud.firstChild.remove();
+     }
+      cargarSolicitudes(filtrado);
+})
 
 import {postPeticiones,tryPeticion,eliminarPeticion,getPeticiones,tryPeticion1,updatePeticion} from "/services/services.js";

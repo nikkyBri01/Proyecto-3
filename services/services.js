@@ -145,7 +145,7 @@ async function updateU(username,newusername) {
 //--------------------------------------Peticiones------------------------------------------------//
 
 
-import { solicitud } from "../login.js";
+import { solicitud } from "../formulario.js";
 //----------------------------------------------Get-----------------------------------------------//
 async function getPeticiones() {
     return new Promise (async(resolve,reject)=>{
@@ -205,7 +205,7 @@ async function eliminarPeticion(id) {
 }
 
 //-------------------------------------Update-----------------------------------------//
-/*
+
 async function updatePeticion(nombre,sede,fechaS,fechaE,codigo,estado,id) {
     let peticion= new solicitud(nombre,sede,fechaS,fechaE,codigo)
     peticion.id=id; peticion.estado=estado;
@@ -233,7 +233,7 @@ async function updateP(username,newusername) {
             return await updateUser(newusername,user.password,user.id) 
         }
     });
-}*/
+}
 
 
-export {updateU,postUsers,updateUser,addUser,deleteUser,tries,getUsers,removeUser,postPeticiones,tryPeticion,eliminarPeticion,getPeticiones}
+export {updateU,postUsers,updateUser,addUser,deleteUser,tries,getUsers,removeUser,postPeticiones,tryPeticion,eliminarPeticion,getPeticiones,updatePeticion}
