@@ -33,14 +33,15 @@ async function findUser(username) {
 }
 
 //-----------------------------------Post----------------------------------//
-async function postUsers(username,email,password,admin,sede) {
+async function postUsers(username,email,password,admin,sede,codigo) {
     try {
       const userData = {
         username,
         email,
         password,
         admin,
-        sede
+        sede,
+        codigo
       };
       const response = await fetch("http://localhost:3000/users", {
         method: "POST",
@@ -56,7 +57,7 @@ async function postUsers(username,email,password,admin,sede) {
     }
 }
 //Añadir usuarions si no existen aun
- async function addUser(username,email,password,codigo,sede) {  
+ async function addUser(username,email,password,codigo,sede,codigoPc) {  
     let admin=false;
     if (codigo=="0000") {
         admin=true
@@ -67,7 +68,7 @@ async function postUsers(username,email,password,admin,sede) {
         if (userExist) {
             return console.log("Ya existe el usuario");    
         }
-        else {await postUsers(username,email,password,admin,sede);
+        else {await postUsers(username,email,password,admin,sede,codigoPc);
         console.log("Se añadio el usuario");}
     } catch (error) {
         return console.log("Error en la funcion update", error);
@@ -145,7 +146,7 @@ async function updateU(username,newusername) {
 //--------------------------------------Peticiones------------------------------------------------//
 
 
-import { solicitud } from "../formulario.js";
+
 //----------------------------------------------Get-----------------------------------------------//
 async function getPeticiones() {
     return new Promise (async(resolve,reject)=>{
@@ -205,9 +206,9 @@ async function eliminarPeticion(id) {
 }
 
 //-------------------------------------Update-----------------------------------------//
-
-async function updatePeticion(nombre,sede,fechaS,fechaE,codigo,estado,id) {
-    let peticion= new solicitud(nombre,sede,fechaS,fechaE,codigo)
+import { solicitud } from "../formulario.js";
+async function updatePeticion(nombre,practica,sede,fechaS,fechaE,codigo,estado,id) {
+    let peticion= new solicitud(nombre,practica,sede,fechaS,fechaE,codigo)
     peticion.id=id; peticion.estado=estado;
     try {
         let response = await fetch("http://localhost:3000/peticiones/"+id,{
