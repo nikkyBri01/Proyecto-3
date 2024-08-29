@@ -50,7 +50,7 @@ let fechaE=document.getElementById("entrada");
 if (buttonEnviar!==null) {
   buttonEnviar.addEventListener("click" ,() => {
     practica=practica.value;
-    fechaS=fechaE.value;
+    fechaS=fechaS.value;
     fechaE=fechaE.value
     console.log("Fecha E:",fechaE,"Fecha S:",fechaS,"practica:",practica);
     
