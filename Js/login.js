@@ -7,7 +7,7 @@ let inputName=document.getElementById("name");
 let btnEnviar=document.getElementById("inicio")
 
 
-let nombreUsuario=JSON.parse(localStorage.getItem("Usuario"))||[];
+let nombreUsuario=JSON.parse(localStorage.getItem("Usuario")) || [];
 
 let entrar=async ()=>{
     let username=inputName.value;

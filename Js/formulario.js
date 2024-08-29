@@ -18,7 +18,7 @@ class solicitud {
 
 //Trae los datos del usuario actual desde el Local
 //Y muestra los datos necesarios en el formulario 
-let currentUser=JSON.parse(localStorage.getItem("Usuario"));
+let currentUser=JSON.parse(localStorage.getItem("Usuario"))||[];
 let nombreCont=document.getElementById("nombreForm");
 if (nombreCont!==null) {
   nombreCont.innerHTML= `
@@ -34,11 +34,12 @@ if (contenedorCod!==null) {
 
 
 //Trae el boton y contenedor para el modal
-
 const contenedorModal = document.getElementById("contenedorModal")
-contenedorModal.style.display = "none";
-const buttonEnviar = document.getElementById("envio")
+if (contenedorModal!==null) {
+  contenedorModal.style.display = "none";
+}
 
+const buttonEnviar = document.getElementById("envio")
 
 //Trae los datos de los inputs del HTML
 let practica=document.getElementById("practica");
@@ -51,6 +52,8 @@ if (buttonEnviar!==null) {
     practica=practica.value;
     fechaS=fechaE.value;
     fechaE=fechaE.value
+    console.log("Fecha E:",fechaE,"Fecha S:",fechaS,"practica:",practica);
+    
   if (!practica||!fechaE||fechaE=="2024-01-01"||!fechaS||fechaS=="2024-01-01") {
     const contenedorModal = document.getElementById("contenedorModal")
     contenedorModal.innerHTML = "";
@@ -87,15 +90,14 @@ if (buttonEnviar!==null) {
     modalMain.className = "mensaje";
     contenedorModal.append(modalHeader);
     contenedorModal.append(modalMain);
-    const modalButton = document.createElement("h2")
+    let modalButton = document.createElement("h2")
     modalButton.innerText = "💻";
     modalButton.className = "modal-button";
+    modalHeader.append(modalButton);
     modalButton.addEventListener("click", () =>{
-      contenedorModal.style.display = "none";   
-      modalHeader.append(modalButton);})
+    contenedorModal.style.display = "none";   
+    modalHeader.append(modalButton);})
 }
-
-
 })
 }
 
