@@ -9,8 +9,8 @@ body{
 
 }
 .containerForm{
-    height: 470px;
-    width: 500px;
+    height: 500px;
+    width: 490px;
 	display: flex;
     justify-content: center;
     background-image: url(img/WhatsApp\ Image\ 2024-08-20\ at\ 11.17.58\ AM.jpeg);
@@ -27,7 +27,6 @@ body{
 }
 .informacionChild h3{
 	color: rgb(156, 29, 156);
-	font-size: 1rem;
     text-align: center;
 }
  label{
@@ -36,7 +35,6 @@ body{
     background-color: #f3e9e9;
     margin-bottom: 15px;
     border-radius: 20px;
-    margin-block-start: 1em;
     padding: 0 10px;
     box-shadow: 0 2px 5px rgba(223, 8, 187, 0.795);  
 }

@@ -1,6 +1,7 @@
 
 import {updateU,updateUser,addUser,deleteUser,tries,getUsers,removeUser, eliminarPeticion, postPeticiones} from "./services/services.js";
 
+
 //-----------------------------Admin------------------------------------//
 //Iniciador de clase solicitud
 class solicitud {
@@ -14,6 +15,7 @@ class solicitud {
         this.estado="Pendiente";
     }
 }
+
 //Trae los datos del usuario actual desde el Local
 //Y muestra los datos necesarios en el formulario 
 let currentUser=JSON.parse(localStorage.getItem("Usuario"));
@@ -26,6 +28,7 @@ let contenedorCod=document.getElementById("codigoCont")
 contenedorCod.innerHTML=currentUser.codigo;
 
 //Trae el boton y contenedor para el modal
+
 const contenedorModal = document.getElementById("contenedorModal")
 const buttonEnviar = document.getElementById("envio")
 
@@ -83,6 +86,7 @@ buttonEnviar.addEventListener("click" ,() => {
       contenedorModal.style.display = "none";   
       modalHeader.append(modalButton);})
 }
+
 
 })
 
