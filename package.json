@@ -5,7 +5,7 @@
   "scripts": {
     "start": "npx parcel *.html",
     "server": "json-server --watch ./server/db.json --port 3000",
-    "melon": "npx parcel formulario.html"
+    "melon": "npx parcel admin.html"
   },
   "author": "",
   "license": "ISC",
