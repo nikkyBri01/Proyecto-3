@@ -205,9 +205,9 @@ async function eliminarPeticion(id) {
 }
 
 //-------------------------------------Update-----------------------------------------//
-
-async function updatePeticion(nombre,sede,fechaS,fechaE,codigo,estado,id) {
-    let peticion= new solicitud(nombre,sede,fechaS,fechaE,codigo)
+import { solicitud } from "../formulario.js";
+async function updatePeticion(nombre,practica,sede,fechaS,fechaE,codigo,estado,id) {
+    let peticion= new solicitud(nombre,practica,sede,fechaS,fechaE,codigo)
     peticion.id=id; peticion.estado=estado;
     try {
         let response = await fetch("http://localhost:3000/peticiones/"+id,{

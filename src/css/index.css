@@ -144,6 +144,21 @@ label i{
     color: #333; 
 }
 
+#contenedorModal{
+    width: 60%;
+    margin: 0 23%;
+    max-height: 88vh;
+    color: aliceblue;
+    background-color: rgba(0, 116, 184, 0.712);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    overflow: auto;
+    z-index: 9;
+    top: 12vh;  
+}
+
 
 
 
