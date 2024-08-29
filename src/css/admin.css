@@ -19,7 +19,6 @@ header nav div{
     align-items: center;
     gap: 30px;
     position: relative;
-
 }
 header h2{
   color: rgb(20, 20, 20);
@@ -40,14 +39,11 @@ footer{
    box-shadow: 0 2px 2px 2px rgba(66, 66, 65, 0.87);
    margin-top: auto
 }
-
 #containerSolicitud{
     display: flex;
     flex-direction: row;
-
     justify-content: space-around;
     flex-wrap: wrap;
-
     margin-top: 30px;
     margin-left: 80px;
     margin-right: 80px;
@@ -79,8 +75,7 @@ footer{
     color: aliceblue;
 }
 .Aceptar:hover{
-   opacity: 0.7;
-     
+   opacity: 0.7;    
 } 
 .Denegar{
     background-color: rgba(238, 78, 4, 0.877);
@@ -93,6 +88,6 @@ footer{
     color: aliceblue;
 }
 .Denegar:hover{
-   opacity: 0.7;
-     
+   opacity: 0.7;    
 } 
+

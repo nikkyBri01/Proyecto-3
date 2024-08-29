@@ -1,8 +1,10 @@
 // import {updateUser,postUsers,getUsers,addUser,tries,removeUser,deleteUser,postPeticiones,eliminarPeticion} from "./services/services.js";
-import {postPeticiones,tryPeticion,eliminarPeticion,getPeticiones,tryPeticion1, } from "/services/services.js";
+import {postPeticiones,tryPeticion,eliminarPeticion,getPeticiones,} from "/services/services.js";
 
 const contenedorSolicitud= document.getElementById("containerSolicitud");
 let tryGet=async ()=> {let respuesta= await getPeticiones(); return respuesta}
+
+
 
 //Carga la solicitudes y las muestra en pantalla dado un array en especifico
 let cargarSolicitudes= async (solicitudes)=> {
@@ -51,12 +53,15 @@ let cargarSolicitudes= async (solicitudes)=> {
 let displaySoli=async()=>{
    try {
       let solicitudes=await tryGet();
+      console.log(solicitudes);
+      
       cargarSolicitudes(solicitudes);  
    } catch (error) {
       console.log("error al cargar solicitudes",error);
    }
 }
 displaySoli()
+
 
 //Se obtienen los datos del filtro
 let filterIn=document.getElementById("inputFilter")
