@@ -10,7 +10,7 @@ class solicitud {
         this.proyecto=proyecto;
         this.sede=sede;
         this.fechaS=fechaS;
-        this.fechaE=fechaE;
+        this.fechaE=fechaE; 
         this.codigo=codigo;
         this.estado="Pendiente";
     }

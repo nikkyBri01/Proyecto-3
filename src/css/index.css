@@ -88,9 +88,6 @@ label i{
 	margin: 10px;
     margin-block-start: 2em;
     background-color: #fdffffc2;
-    
-    
-
 }
 .informacionChild{
     margin-block-start: 2em;
@@ -99,7 +96,6 @@ label i{
     text-align: center;
 
 }
-
 .name{
      width: 100%;
    padding: 10px;
@@ -119,8 +115,6 @@ label i{
    outline: none;
    border-radius: 20px;
    color: #333;
-
-
 }
 #inicio{
      background-color: #12affeeb;
@@ -132,7 +126,6 @@ label i{
     margin-top: 10px;
     margin-left: 60px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1); 
-
 }
 #codigo{
     width: 100%;
@@ -143,13 +136,12 @@ label i{
     border-radius: 20px;
     color: #333; 
 }
-
 #contenedorModal{
     width: 60%;
     margin: 0 23%;
     max-height: 88vh;
-    color: aliceblue;
-    background-color: rgba(0, 116, 184, 0.712);
+    color: rgb(7, 7, 7);
+    background-color: rgba(176, 180, 182, 0.623);
     display: flex;
     flex-direction: column;
     align-items: center;

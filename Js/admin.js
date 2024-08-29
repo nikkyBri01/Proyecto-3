@@ -5,7 +5,6 @@ const contenedorSolicitud= document.getElementById("containerSolicitud");
 let tryGet=async ()=> {let respuesta= await getPeticiones(); return respuesta}
 
 
-
 //Carga la solicitudes y las muestra en pantalla dado un array en especifico
 let cargarSolicitudes= async (solicitudes)=> {
    solicitudes.forEach(solicitud => {
