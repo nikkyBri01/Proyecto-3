@@ -10,7 +10,7 @@ class solicitud {
         this.proyecto=proyecto;
         this.sede=sede;
         this.fechaS=fechaS;
-        this.fechaE=fechaE;
+        this.fechaE=fechaE; 
         this.codigo=codigo;
         this.estado="Pendiente";
     }
@@ -18,7 +18,7 @@ class solicitud {
 
 //Trae los datos del usuario actual desde el Local
 //Y muestra los datos necesarios en el formulario 
-let currentUser=JSON.parse(localStorage.getItem("Usuario"));
+let currentUser=JSON.parse(localStorage.getItem("Usuario"))||[];
 let nombreCont=document.getElementById("nombreForm");
 if (nombreCont!==null) {
   nombreCont.innerHTML= `
