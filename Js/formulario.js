@@ -1,5 +1,5 @@
 
-import {updateU,updateUser,addUser,deleteUser,tries,getUsers,removeUser, eliminarPeticion, postPeticiones} from "./services/services.js";
+import {postPeticiones} from "../services/services.js";
 
 
 //-----------------------------Admin------------------------------------//
@@ -20,16 +20,23 @@ class solicitud {
 //Y muestra los datos necesarios en el formulario 
 let currentUser=JSON.parse(localStorage.getItem("Usuario"));
 let nombreCont=document.getElementById("nombreForm");
-nombreCont.innerHTML= `
-<h2>Nombre de Usuario: ${currentUser.username}</h2>
-<h3>Sede: ${currentUser.sede}</h3>`;
-nombreCont.style.textAlign="center";
+if (nombreCont!==null) {
+  nombreCont.innerHTML= `
+  <h2>Nombre de Usuario: ${currentUser.username}</h2>
+  <h3>Sede: ${currentUser.sede}</h3>`;
+  nombreCont.style.textAlign="center";
+}
+
 let contenedorCod=document.getElementById("codigoCont")
-contenedorCod.innerHTML=currentUser.codigo;
+if (contenedorCod!==null) {
+  contenedorCod.innerHTML=currentUser.codigo;
+}
+
 
 //Trae el boton y contenedor para el modal
 
 const contenedorModal = document.getElementById("contenedorModal")
+contenedorModal.style.display = "none";
 const buttonEnviar = document.getElementById("envio")
 
 
@@ -39,7 +46,8 @@ let fechaS=document.getElementById("salida");
 let fechaE=document.getElementById("entrada");
 
 //Funcionalidad del boton enviar formulario
-buttonEnviar.addEventListener("click" ,() => {
+if (buttonEnviar!==null) {
+  buttonEnviar.addEventListener("click" ,() => {
     practica=practica.value;
     fechaS=fechaE.value;
     fechaE=fechaE.value
@@ -89,6 +97,8 @@ buttonEnviar.addEventListener("click" ,() => {
 
 
 })
+}
+
 
 export {solicitud}
 

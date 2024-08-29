@@ -1,5 +1,5 @@
 
-import {updateUser,postUsers,getUsers,addUser,tries,removeUser,deleteUser,postPeticiones,eliminarPeticion} from "./services/services.js";
+import {getUsers} from "../services/services.js";
 
 //--------------------------------------LogIn-----------------------------------------//
 let inputPass=document.getElementById("password");

@@ -1,6 +1,4 @@
-// import {updateUser,postUsers,getUsers,addUser,tries,removeUser,deleteUser,postPeticiones,eliminarPeticion} from "./services/services.js";
-
-import {postPeticiones,tryPeticion,eliminarPeticion,getPeticiones,tryPeticion1,updatePeticion } from "/services/services.js";
+import {getPeticiones,updatePeticion} from "/services/services.js";
 
 
 const contenedorSolicitud= document.getElementById("containerSolicitud");
