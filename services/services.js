@@ -105,14 +105,15 @@ async function removeUser(username) {
 
 //----------------------------------Update---------------------------------//
 
-async function updateUser(username,password,email, admin,sede,id) {
+async function updateUser(username,password,email, admin,sede,codigo,id) {
     let user={
         id,
         username,
         email,
         password,
         admin,
-        sede
+        sede,
+        codigo
     }
     try {
         let response = await fetch("http://localhost:3000/users/"+id,{
@@ -144,8 +145,6 @@ async function updateU(username,newusername) {
 
 
 //--------------------------------------Peticiones------------------------------------------------//
-
-
 
 //----------------------------------------------Get-----------------------------------------------//
 async function getPeticiones() {
