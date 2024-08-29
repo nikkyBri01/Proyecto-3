@@ -6,6 +6,7 @@ let inputPass=document.getElementById("password");
 let inputName=document.getElementById("name");
 let btnEnviar=document.getElementById("inicio")
 
+
 let nombreUsuario=JSON.parse(localStorage.getItem("Usuario"))||[];
 
 let entrar=async ()=>{
@@ -16,14 +17,31 @@ let entrar=async ()=>{
     nombreUsuario[0]=usuario;
     localStorage.setItem("Usuario",JSON.stringify(usuario))
     if (usuario) {
-        if(usuario.admin==true){window.location.href= "http://localhost:8000/admin.html";} 
-        else {window.location.href="http://localhost:8000/formulario.html"; return nombreUsuario};
+        if(usuario.admin==true){window.location.href= "admin.html";} 
+        else window.location.href="formulario.html";
     }
-    else return console.log("No se encontro");
+    else {
+        const contenedorModal = document.getElementById("contenedorModal")
+        contenedorModal.innerHTML = "";
+        const modalHeader = document.createElement("div");
+        const modalMain = document.createElement('div')
+        contenedorModal.style.display = "block";
+        modalHeader.className = "modal"
+        modalHeader.innerHTML = `<h3>Envio de Formulario</h3>`;
+        modalMain.innerHTML = 'Faltan datos por llenar';
+        modalMain.className = "mensaje";
+        contenedorModal.append(modalHeader);
+        contenedorModal.append(modalMain);
+        const modalButton = document.createElement("h2")
+        modalButton.innerText = "💻";
+        modalButton.className = "modal-button";
+        modalButton.addEventListener("click", () =>{
+        contenedorModal.style.display = "none";})
+        modalHeader.append(modalButton);
+    };
 }
 
 btnEnviar.addEventListener("click", function () {
     entrar()
 })
 
-export{nombreUsuario}
