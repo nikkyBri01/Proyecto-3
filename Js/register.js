@@ -29,15 +29,8 @@ let password = document.getElementById("password");
 let admin = document.getElementById("admin");
 let sede = document.getElementById("sede");
 
-window.register = function() {
-    if (name.value ==""||email.value==""||password.value==""||admin.value==""||sede.value=="Selecciona tu sede") {
-        return alert("Faltan campos por llenar")
-    }
-    return addUser(name.value,email.value,password.value,admin.value,sede.value)
-};
-
 // modal 
-/*function createModal(message) {
+function createModal(message) {
     
     let modal = document.createElement("div");
     modal.className = "regisModal";
@@ -45,7 +38,7 @@ window.register = function() {
     let modalContent = document.createElement("div");
 
     let closeButton = document.createElement("span");
-    closeButton.innerHTML = "Cerrar";
+    const newLocal = closeButton.innerHTML = "X";
 
     let text = document.createElement("p");
     text.textContent = message;
@@ -63,18 +56,21 @@ window.register = function() {
     document.body.appendChild(modal);
 }
 
-window.register = function () {
+let register = function () {
     if (
         name.value === "" ||
         email.value === "" ||
         password.value === "" ||
-        admin.value === "" ||
         sede.value === "Selecciona tu sede"
     ) {
         createModal("Faltan campos por llenar");
         return;
     }
-
     return addUser(name.value, email.value, password.value, admin.value, sede.value);
 };
+
+let registro = document.getElementById("registro")
+if (registro!==null) {
+    registro.addEventListener("click",register,true)
+}
 
