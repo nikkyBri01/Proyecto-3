@@ -200,7 +200,7 @@ function createModal(message) {
 
   
    closeButton.onclick = function () {
-       document.body.removeChild(modal);
+       document.contenedorSolicitud.removeChild(modal);
    };
 
   
