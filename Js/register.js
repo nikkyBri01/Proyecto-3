@@ -36,3 +36,45 @@ window.register = function() {
     return addUser(name.value,email.value,password.value,admin.value,sede.value)
 };
 
+// modal 
+/*function createModal(message) {
+    
+    let modal = document.createElement("div");
+    modal.className = "regisModal";
+
+    let modalContent = document.createElement("div");
+
+    let closeButton = document.createElement("span");
+    closeButton.innerHTML = "Cerrar";
+
+    let text = document.createElement("p");
+    text.textContent = message;
+
+   
+    closeButton.onclick = function () {
+        document.body.removeChild(modal);
+    };
+
+   
+    modalContent.appendChild(text);
+    modalContent.appendChild(closeButton);
+    modal.appendChild(modalContent);
+
+    document.body.appendChild(modal);
+}
+
+window.register = function () {
+    if (
+        name.value === "" ||
+        email.value === "" ||
+        password.value === "" ||
+        admin.value === "" ||
+        sede.value === "Selecciona tu sede"
+    ) {
+        createModal("Faltan campos por llenar");
+        return;
+    }
+
+    return addUser(name.value, email.value, password.value, admin.value, sede.value);
+};
+
