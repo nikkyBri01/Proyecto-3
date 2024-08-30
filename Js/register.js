@@ -39,7 +39,7 @@ function createModal(message) {
     let modalContent = document.createElement("div");
 
     let closeButton = document.createElement("span");
-    const newLocal = closeButton.innerHTML = "X";
+    let newLocal = closeButton.innerHTML = "X";
 
     let text = document.createElement("p");
     text.textContent = message;
