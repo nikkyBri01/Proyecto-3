@@ -30,7 +30,6 @@ let admin = document.getElementById("admin");
 let sede = document.getElementById("sede");
 let codigoPC=document.getElementById("CodigoPc");
 
-
 // modal 
 function createModal(message) {
     
@@ -40,7 +39,7 @@ function createModal(message) {
     let modalContent = document.createElement("div");
 
     let closeButton = document.createElement("span");
-    closeButton.innerHTML = "Cerrar";
+    const newLocal = closeButton.innerHTML = "X";
 
     let text = document.createElement("p");
     text.textContent = message;
@@ -65,6 +64,7 @@ let register = function () {
         password.value === "" ||
         sede.value === "Selecciona tu sede"||
         codigoPC.value===""
+
     ) {
         createModal("Faltan campos por llenar");
         return;
@@ -76,5 +76,6 @@ let register = function () {
 let registro=document.getElementById("registro");
 if (registro!==null) {
     registro.addEventListener("click",register,true)    
+
 }
 

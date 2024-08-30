@@ -184,10 +184,44 @@ footer{
         margin-block-start: 1em;
         box-shadow: none;
     }
+
+    #datoInput{
+        width: 80%;
+        margin-right: 10%;
+        font-size: 10px;
+        height: auto;
+        flex-direction: column;
+    }
+    #fechaS{
+        width: 80%;
+        margin-right: 10%;
+        font-size: 10px;
+        height: auto;
+        flex-direction: column;
+    
+    }
+    #fechaE{
+        width: 80%;
+        margin-right: 10%;
+        font-size: 10px;
+        height: auto;
+        flex-direction: column;
+    
+    }
+    #btnBuscar{
+        margin-right: 20px;
+        height: auto;
+        flex-direction: column;
+    
+    }
+
+
     .mainCont{
         flex-direction: column;
         margin-left: 20px;
         margin-right: 20px;
     }
+
 }
+
 
