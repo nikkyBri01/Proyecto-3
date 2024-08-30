@@ -5,7 +5,11 @@ import {getUsers} from "../services/services.js";
 let inputPass=document.getElementById("password");
 let inputName=document.getElementById("name");
 let btnEnviar=document.getElementById("inicio")
-
+//Trae el boton y contenedor para el modal
+const contenedorModal = document.getElementById("contenedorModal")
+if (contenedorModal!==null) {
+  contenedorModal.style.display = "none";
+}
 
 let nombreUsuario=JSON.parse(localStorage.getItem("Usuario")) || [];
 
@@ -21,7 +25,6 @@ let entrar=async ()=>{
         else window.location.href="formulario.html";
     }
     else {
-        const contenedorModal = document.getElementById("contenedorModal")
         contenedorModal.innerHTML = "";
         const modalHeader = document.createElement("div");
         const modalMain = document.createElement('div')

@@ -71,10 +71,8 @@ displaySoli()
 
 //Se obtienen los datos del filtro
 let filterIn=document.getElementById("inputFilter")
-//funcion que limpia un contenedor traido del HTML
-
-//Se añade la funcionalidad del filter
-filterIn.addEventListener("input",async function busqueda(){
+//Funcion que busca peticiones con filter
+async function busqueda(){
    let valor=filterIn.value.trim();
    let peticiones= await getPeticiones();
    let filtrado= peticiones.filter(peticion=>
@@ -87,7 +85,10 @@ filterIn.addEventListener("input",async function busqueda(){
          contenedorSolicitud.firstChild.remove();
      }
       cargarSolicitudes(filtrado);
-},true)
+}
+
+//Se añade la funcionalidad del filter
+filterIn.addEventListener("input",busqueda,true)
 
 
 //Funcionalidad del boton historial
@@ -111,43 +112,60 @@ let cargarHistorial= async (solicitudes)=> {
 });
 }
 
-let btnHistorial=document.getElementById("btnHistorial");
-
-if (btnHistorial!==null) {
-   btnHistorial.addEventListener("click",function () {
-      while (contenedorSolicitud.firstChild) {
-         contenedorSolicitud.firstChild.remove();
-     }
-      cargarHistorial(historial)
-      filterIn.removeEventListener("input",busqueda,true);
-      filterIn.addEventListener("input",async ()=>{
-         let valor=filterIn.value.trim();
-         let peticiones= await getPeticiones();
-         let filtrado= peticiones.filter(peticion=>
-            peticion.nombre.toLowerCase().includes(valor.toLowerCase())||
-            peticion.sede.toLowerCase().includes(valor.toLowerCase())||
-            peticion.fechaE.toLowerCase().includes(valor.toLowerCase())||
-            peticion.fechaS.toLowerCase().includes(valor.toLowerCase())||
-            peticion.codigo.toLowerCase().includes(valor.toLowerCase()))
-            while (contenedorSolicitud.firstChild) {
-               contenedorSolicitud.firstChild.remove();
-           }
-            cargarHistorial(filtrado);
-      })
-   })
-}
-
-
 //Funcionalidad del boton solicitudes
 let btnSolicitud=document.getElementById("btnSolicitud")
 
 if (btnSolicitud!==null) {
    btnSolicitud.addEventListener("click",function () {
+      while (contenedorSolicitud.firstChild) {contenedorSolicitud.firstChild.remove();}
+     let mainCont=document.getElementById("historialInput");
+     while (mainCont.firstChild) {mainCont.firstChild.remove();}
+     filterIn.removeEventListener("input",busquedaH,true);
+     filterIn.addEventListener("input",busqueda,true);
+     btnSolicitud.style.display="none";
+     btnHistorial.style.display="block"
+      displaySoli()
+   })  
+}
+
+//Boton para ir al historial
+let btnHistorial=document.getElementById("btnHistorial");
+
+//Funcion que busca en el historial
+let busquedaH=async ()=>{
+   let valor=filterIn.value.trim();
+   let filtrado=historial.filter(peticion=>
+      peticion.nombre.toLowerCase().includes(valor.toLowerCase())||
+      peticion.sede.toLowerCase().includes(valor.toLowerCase())||
+      peticion.fechaE.toLowerCase().includes(valor.toLowerCase())||
+      peticion.fechaS.toLowerCase().includes(valor.toLowerCase())||
+      peticion.codigo.toLowerCase().includes(valor.toLowerCase()))
       while (contenedorSolicitud.firstChild) {
          contenedorSolicitud.firstChild.remove();
      }
-      displaySoli()
-
-   })
-   
+   cargarHistorial(filtrado);
 }
+
+//Funcionalidad del boton
+if (btnHistorial!==null) {
+   btnHistorial.addEventListener("click",function () {
+      let mainCont=document.getElementById("historialInput");
+      while (contenedorSolicitud.firstChild) {contenedorSolicitud.firstChild.remove();}
+      while (mainCont.firstChild) {mainCont.firstChild.remove();}
+      mainCont.innerHTML=`
+         <input type="text" name="datoInput" id="datoInput" placeholder="Buscar">
+         <label for="fechaS">Salida: </label>
+         <input type="date" id="fechaS">
+         <label for="fechaE">Entrada: </label>
+         <input type="date" id="fechaE"></input>
+         <button id="btnBuscar">Buscar</button>
+      `;
+      cargarHistorial(historial);
+      btnHistorial.style.display="none";
+      btnSolicitud.style="margin-right: 150px;";
+      filterIn.removeEventListener("input",busqueda,true);
+      filterIn.addEventListener("input",busquedaH,true);
+   })
+}
+
+
