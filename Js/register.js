@@ -28,6 +28,7 @@ let email = document.getElementById("email");
 let password = document.getElementById("password");
 let admin = document.getElementById("admin");
 let sede = document.getElementById("sede");
+let codigoPC=document.getElementById("CodigoPc");
 
 // modal 
 function createModal(message) {
@@ -61,16 +62,20 @@ let register = function () {
         name.value === "" ||
         email.value === "" ||
         password.value === "" ||
-        sede.value === "Selecciona tu sede"
+        sede.value === "Selecciona tu sede"||
+        codigoPC.value===""
+
     ) {
         createModal("Faltan campos por llenar");
         return;
     }
-    return addUser(name.value, email.value, password.value, admin.value, sede.value);
+     addUser(name.value, email.value, password.value, admin.value, sede.value, codigoPC.value);
+     return window.location.href="pages/index.html";
 };
 
-let registro = document.getElementById("registro")
+let registro=document.getElementById("registro");
 if (registro!==null) {
-    registro.addEventListener("click",register,true)
+    registro.addEventListener("click",register,true)    
+
 }
 

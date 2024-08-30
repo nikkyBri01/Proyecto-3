@@ -52,7 +52,6 @@ if (buttonEnviar!==null) {
       let practicaN=practica.value;
       let fechaSalida=fechaS.value;
       let fechaEntrada=fechaE.value;
-    console.log("Fecha E:",fechaEntrada,"Fecha S:",fechaSalida,"practica:",practicaN);
   if (!practicaN||!fechaEntrada||fechaEntrada=="2024-01-01"||!fechaSalida||fechaSalida=="2024-01-01") {
     const contenedorModal = document.getElementById("contenedorModal")
     contenedorModal.innerHTML = "";
@@ -72,9 +71,7 @@ if (buttonEnviar!==null) {
     contenedorModal.style.display = "none";})
     modalHeader.append(modalButton);
     }
-
   else {
-    console.log("Practica",practica,"fechaS",fechaS,"fechaE",fechaE);
     let peticion = new solicitud(currentUser.username,practicaN,currentUser.sede,fechaSalida,fechaEntrada,currentUser.codigo)
     postPeticiones(peticion);
     const contenedorModal = document.getElementById("contenedorModal")

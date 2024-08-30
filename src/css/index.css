@@ -29,6 +29,14 @@ body{
 	color: rgb(156, 29, 156);
     text-align: center;
 }
+
+#linkRegister{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: #085c86eb;
+    
+}
  label{
     display: flex;
     align-items: center;
@@ -60,7 +68,6 @@ label i{
     margin-top: 10px;
     margin-left: 45px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1);  
-   
 }
 .submit:hover{
    background-color: #333;
@@ -117,14 +124,15 @@ label i{
    color: #333;
 }
 #inicio{
-     background-color: #12affeeb;
+    display: flex;
+    background-color: #12affeeb;
     color: #fff;
     border-radius: 20px;
     border: none;
     padding: 10px 15px;
     cursor: pointer;
     margin-top: 10px;
-    margin-left: 60px;
+    margin-left: 75px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, .1); 
 }
 #codigo{

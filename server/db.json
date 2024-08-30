@@ -10,49 +10,22 @@
       "codigo": "8D7J"
     },
     {
-      "id": "84e2",
-      "username": "Jose",
-      "email": "jose@fwd.com",
+      "id": "5dc7",
+      "username": "Adrian",
+      "email": "adrian@melacomo.com",
+      "password": "1234",
+      "admin": true,
+      "sede": "Nosara",
+      "codigo": "5T7H"
+    },
+    {
+      "id": "c6b5",
+      "username": "Roberto",
+      "email": "acarmona@fwdcostarica.com",
       "password": "1234",
       "admin": false,
-      "sede": "el Huerto",
-      "codigo": "7T9H"
-    },
-    {
-      "id": "645e",
-      "username": "Juan",
-      "email": "j@fwd.com",
-      "password": "12321",
-      "admin": true,
-      "sede": "2",
-      "codigo": "0P4V"
-    },
-    {
-      "id": "e549",
-      "username": "J",
-      "email": "js@fwd.com",
-      "password": "12321",
-      "admin": false,
-      "sede": "2",
-      "codigo": "5B9R"
-    },
-    {
-      "id": "a48a",
-      "username": "Nico",
-      "email": "n@fwd.com",
-      "password": "123",
-      "admin": true,
-      "sede": "Nosara",
-      "codigo": "7K3F"
-    },
-    {
-      "id": "0b4f",
-      "username": "Nikky",
-      "email": "na@fwd.com",
-      "password": "123",
-      "admin": false,
-      "sede": "Nosara",
-      "codigo": "7L4E"
+      "sede": "Santa Ana",
+      "codigo": "asd2"
     }
   ],
   "peticiones": [
@@ -73,96 +46,6 @@
       "sede": "el Huerto",
       "fechaS": "2024-01-31",
       "fechaE": "2024-01-31",
-      "codigo": "8D7J",
-      "estado": "Pendiente"
-    },
-    {
-      "id": "3518",
-      "nombre": "Jose",
-      "proyecto": "Proyecto Final  js ",
-      "sede": "el Huerto",
-      "fechaS": "2024-01-27",
-      "fechaE": "2024-01-27",
-      "codigo": "7T9H",
-      "estado": "Pendiente"
-    },
-    {
-      "id": "34ad",
-      "nombre": "Jose",
-      "proyecto": "Practica2",
-      "sede": "el Huerto",
-      "fechaS": "2024-01-12",
-      "fechaE": "2024-01-12",
-      "codigo": "7T9H",
-      "estado": "Pendiente"
-    },
-    {
-      "id": "c034",
-      "nombre": "Jose",
-      "proyecto": "Proyecto Final  js 2",
-      "sede": "el Huerto",
-      "fechaS": "2024-01-18",
-      "fechaE": "2024-01-20",
-      "codigo": "7T9H",
-      "estado": "Pendiente"
-    },
-    {
-      "id": "6821",
-      "nombre": "Ale",
-      "proyecto": "Proyecto Final",
-      "sede": "el Huerto",
-      "fechaS": "2024-01-17",
-      "fechaE": "2024-01-26",
-      "codigo": "8D7J",
-      "estado": "Pendiente"
-    },
-    {
-      "id": "c091",
-      "nombre": "Ale",
-      "proyecto": {},
-      "sede": "el Huerto",
-      "fechaS": {},
-      "fechaE": {},
-      "codigo": "8D7J",
-      "estado": "Pendiente"
-    },
-    {
-      "id": "a811",
-      "nombre": "Ale",
-      "proyecto": "Proyecto Final",
-      "sede": "el Huerto",
-      "fechaS": "2024-01-03",
-      "fechaE": "2024-01-18",
-      "codigo": "8D7J",
-      "estado": "Pendiente"
-    },
-    {
-      "id": "05d2",
-      "nombre": "Ale",
-      "proyecto": {},
-      "sede": "el Huerto",
-      "fechaS": {},
-      "fechaE": {},
-      "codigo": "8D7J",
-      "estado": "Pendiente"
-    },
-    {
-      "id": "6e6c",
-      "nombre": "Ale",
-      "proyecto": "Proyecto Final",
-      "sede": "el Huerto",
-      "fechaS": "2024-02-09",
-      "fechaE": "2024-02-11",
-      "codigo": "8D7J",
-      "estado": "Pendiente"
-    },
-    {
-      "id": "27f4",
-      "nombre": "Ale",
-      "proyecto": "Proyecto Final",
-      "sede": "el Huerto",
-      "fechaS": "2024-01-11",
-      "fechaE": "2024-01-17",
       "codigo": "8D7J",
       "estado": "Pendiente"
     }
