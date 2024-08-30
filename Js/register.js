@@ -28,16 +28,11 @@ let email = document.getElementById("email");
 let password = document.getElementById("password");
 let admin = document.getElementById("admin");
 let sede = document.getElementById("sede");
+let codigoPC=document.getElementById("CodigoPc");
 
-window.register = function() {
-    if (name.value ==""||email.value==""||password.value==""||admin.value==""||sede.value=="Selecciona tu sede") {
-        return alert("Faltan campos por llenar")
-    }
-    return addUser(name.value,email.value,password.value,admin.value,sede.value)
-};
 
 // modal 
-/*function createModal(message) {
+function createModal(message) {
     
     let modal = document.createElement("div");
     modal.className = "regisModal";
@@ -63,18 +58,23 @@ window.register = function() {
     document.body.appendChild(modal);
 }
 
-window.register = function () {
+let register = function () {
     if (
         name.value === "" ||
         email.value === "" ||
         password.value === "" ||
-        admin.value === "" ||
-        sede.value === "Selecciona tu sede"
+        sede.value === "Selecciona tu sede"||
+        codigoPC.value===""
     ) {
         createModal("Faltan campos por llenar");
         return;
     }
-
-    return addUser(name.value, email.value, password.value, admin.value, sede.value);
+     addUser(name.value, email.value, password.value, admin.value, sede.value, codigoPC.value);
+     return window.location.href="pages/index.html";
 };
+
+let registro=document.getElementById("registro");
+if (registro!==null) {
+    registro.addEventListener("click",register,true)    
+}
 
