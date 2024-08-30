@@ -166,5 +166,49 @@ label i{
     font-weight: 700;
 }
 
+/*media*/
+
+@media (max-width: 768px) {
+    .containerForm {
+        width: 90%;
+        height: auto;
+        margin: 5px;
+    }
+
+    .informacionForm {
+        width: 90%;
+        height: auto;
+        margin: 5px;
+    }
+
+    .submit, #inicio {
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .containerForm {
+        width: 100%;
+        height: auto;
+    }
+
+    .informacionForm {
+        width: 100%;
+        height: auto;
+    }
+
+    .submit, #inicio {
+        margin-left: 10px;
+    }
+
+    .modal {
+        font-size: 16px;
+    }
+
+    .mensaje {
+        font-size: 16px;
+    }
+}
+
 
 
