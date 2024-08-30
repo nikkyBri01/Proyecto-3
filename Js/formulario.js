@@ -48,13 +48,12 @@ let fechaE=document.getElementById("entrada");
 
 //Funcionalidad del boton enviar formulario
 if (buttonEnviar!==null) {
-  buttonEnviar.addEventListener("click" ,() => {
-    practica=practica.value;
-    fechaS=fechaS.value;
-    fechaE=fechaE.value
-    console.log("Fecha E:",fechaE,"Fecha S:",fechaS,"practica:",practica);
-    
-  if (!practica||!fechaE||fechaE=="2024-01-01"||!fechaS||fechaS=="2024-01-01") {
+    buttonEnviar.addEventListener("click" ,() => {
+      let practicaN=practica.value;
+      let fechaSalida=fechaS.value;
+      let fechaEntrada=fechaE.value;
+    console.log("Fecha E:",fechaEntrada,"Fecha S:",fechaSalida,"practica:",practicaN);
+  if (!practicaN||!fechaEntrada||fechaEntrada=="2024-01-01"||!fechaSalida||fechaSalida=="2024-01-01") {
     const contenedorModal = document.getElementById("contenedorModal")
     contenedorModal.innerHTML = "";
     const modalHeader = document.createElement("div");
@@ -76,7 +75,7 @@ if (buttonEnviar!==null) {
 
   else {
     console.log("Practica",practica,"fechaS",fechaS,"fechaE",fechaE);
-    let peticion = new solicitud(currentUser.username,practica,currentUser.sede,fechaS,fechaE,currentUser.codigo)
+    let peticion = new solicitud(currentUser.username,practicaN,currentUser.sede,fechaSalida,fechaEntrada,currentUser.codigo)
     postPeticiones(peticion);
     const contenedorModal = document.getElementById("contenedorModal")
     const buttonEnviar = document.getElementById("envio")
