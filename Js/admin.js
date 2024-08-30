@@ -146,6 +146,7 @@ let busquedaH=async ()=>{
    cargarHistorial(filtrado);
 }
 
+
 //Funcionalidad del boton
 if (btnHistorial!==null) {
    btnHistorial.addEventListener("click",function () {
@@ -165,7 +166,75 @@ if (btnHistorial!==null) {
       btnSolicitud.style="margin-right: 150px;";
       filterIn.removeEventListener("input",busqueda,true);
       filterIn.addEventListener("input",busquedaH,true);
+      let btnBuscar=document.getElementById("btnBuscar");
+      let dato=document.getElementById("datoInput");
+      let fechaS=document.getElementById("fechaS");
+      let fechaE=document.getElementById("fechaE");
+
+      if (btnBuscar!==null) {
+         btnBuscar.addEventListener("click",function () {
+            if (!dato.value||!fechaS||!fechaE) {
+               console.log("Entre");
+               
+               return createModal("Faltan datos por llenar")
+            }
+            buscarHistorial(dato.value,fechaS.value,fechaE.value),false
+         })
+      }
    })
 }
+
+//Importa la funcion para crear modales
+function createModal(message) {
+    
+   let modal = document.createElement("div");
+   modal.className = "regisModal";
+
+   let modalContent = document.createElement("div");
+
+   let closeButton = document.createElement("span");
+   closeButton.innerHTML = "Cerrar";
+
+   let text = document.createElement("p");
+   text.textContent = message;
+
+  
+   closeButton.onclick = function () {
+       document.body.removeChild(modal);
+   };
+
+  
+   modalContent.appendChild(text);
+   modalContent.appendChild(closeButton);
+   modal.appendChild(modalContent);
+
+   contenedorSolicitud.appendChild(modal);
+}
+
+const buscarHistorial = (dato, fechaSalida, fechaEntrada) => {
+   // Filtra los registros basados en el valor de búsqueda
+   const filtrado = historial.filter(peticion =>
+     peticion.nombre.toLowerCase().includes(dato.toLowerCase()) ||
+     peticion.sede.toLowerCase().includes(dato.toLowerCase()) ||
+     peticion.fechaE.toLowerCase().includes(dato.toLowerCase()) ||
+     peticion.fechaS.toLowerCase().includes(dato.toLowerCase()) ||
+     peticion.codigo.toLowerCase().includes(dato.toLowerCase())
+   );
+   //Usa reduce para filtrar los registros basados en el rango de fechas
+      const datoFinal = filtrado.reduce((acumulador, item) => {
+     const fechaSDate = new Date(item.fechaS);
+     const fechaEDate = new Date(item.fechaE);
+     if (fechaSDate >= new Date(fechaSalida) && fechaEDate <= new Date(fechaEntrada)) {
+       acumulador.push(item);
+     }
+     return acumulador; 
+   }, []);
+   console.log("Dato final: ", datoFinal);
+   while (contenedorSolicitud.firstChild) {
+      contenedorSolicitud.firstChild.remove();
+  }
+   return cargarHistorial(datoFinal)
+ };
+
 
 
