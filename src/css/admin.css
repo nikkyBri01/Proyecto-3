@@ -10,6 +10,9 @@ justify-content: center;
 grid-row: 2;
 grid-column: 2;
 }
+#inputFilter{
+    outline: none;
+}
 
 #historialInput{
     margin-right: 150px;
@@ -17,10 +20,10 @@ grid-column: 2;
     grid-column: 3;
     height: 100%;
     display: flex;
-
 }
 #historialInput input{
     width: 100px;
+    outline: none;
 }
 header{
     box-shadow: 0 2px 2px 2px rgba(75, 75, 73, 0.507);
@@ -55,6 +58,7 @@ header h2{
     margin-block-start: 1.5em;
     justify-self: center;
 }
+
 #logo{
    height: 120px; 
 }
@@ -129,6 +133,9 @@ footer{
     margin-left: 8%;
     box-shadow: 0 2px 2px 2px rgba(109, 109, 108, 0.658);
 }
+#btnSolicitud:hover{
+    opacity: 0.7;   
+}
 #btnHistorial{
     border-radius: 5px;
     width: 90px;
@@ -139,6 +146,10 @@ footer{
     background-color: rgba(252, 83, 41, 0.226);
     margin-left: 8%;
     box-shadow: 0 2px 2px 2px rgba(109, 109, 108, 0.658);
+}
+#btnHistorial:hover{
+    opacity: 0.7;
+    
 }
 
 
@@ -245,7 +256,6 @@ footer{
         font-size: 10px;
         height: auto;
         flex-direction: column;
-
     }
 
 }
