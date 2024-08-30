@@ -90,5 +90,28 @@ footer{
 .Denegar:hover{
    opacity: 0.7;    
 }
-
+#btnSolicitud{
+    border-radius: 5px;
+    width: 95px;
+    height: 40px;
+    font-size: 17px;
+    text-align: center;
+    border: none;
+    background-color: rgba(95, 250, 75, 0.226);
+    margin-left: 8%;
+    margin-block-start: 2em;
+    box-shadow: 0 2px 2px 2px rgba(109, 109, 108, 0.658);
+}
+#btnHistorial{
+    border-radius: 5px;
+    width: 90px;
+    height: 40px;
+    font-size: 17px;
+    text-align: center;
+    border: none;
+    background-color: rgba(252, 83, 41, 0.226);
+    margin-left: 8%;
+    margin-block-end: 3em;
+    box-shadow: 0 2px 2px 2px rgba(109, 109, 108, 0.658);
+}
 
