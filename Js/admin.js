@@ -173,12 +173,10 @@ if (btnHistorial!==null) {
 
       if (btnBuscar!==null) {
          btnBuscar.addEventListener("click",function () {
-            if (!dato.value||!fechaS||!fechaE) {
-               console.log("Entre");
-               
+            if (!dato.value||!fechaS||!fechaE) {  
                return createModal("Faltan datos por llenar")
             }
-            buscarHistorial(dato.value,fechaS.value,fechaE.value),false
+            buscarHistorial(dato.value,fechaS.value,fechaE.value)
          })
       }
    })
@@ -230,7 +228,6 @@ const buscarHistorial = (dato, fechaSalida, fechaEntrada) => {
      }
      return acumulador; 
    }, []);
-   console.log("Dato final: ", datoFinal);
    while (contenedorSolicitud.firstChild) {
       contenedorSolicitud.firstChild.remove();
   }
