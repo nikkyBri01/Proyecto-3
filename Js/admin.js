@@ -185,6 +185,7 @@ if (btnHistorial!==null) {
 }
 
 //Importa la funcion para crear modales
+let main=document.getElementById("mainCont")
 function createModal(message) {
     
    let modal = document.createElement("div");
@@ -200,7 +201,7 @@ function createModal(message) {
 
   
    closeButton.onclick = function () {
-       document.contenedorSolicitud.removeChild(modal);
+      main.removeChild(modal);
    };
 
   
@@ -208,7 +209,7 @@ function createModal(message) {
    modalContent.appendChild(closeButton);
    modal.appendChild(modalContent);
 
-   contenedorSolicitud.appendChild(modal);
+   main.appendChild(modal);
 }
 
 const buscarHistorial = (dato, fechaSalida, fechaEntrada) => {
