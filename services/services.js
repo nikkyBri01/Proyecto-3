@@ -132,7 +132,6 @@ async function eliminarPeticion(id) {
         method: 'DELETE',
             headers: {'Content-Type': 'application/json'}
         });
-        console.log(response);
         
     if (!response.ok) {
         throw new Error("No se ejecuto");
