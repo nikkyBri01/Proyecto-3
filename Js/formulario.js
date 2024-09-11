@@ -16,15 +16,28 @@ class solicitud {
     }
 }
 
+//Verifica que el valor exista y sea diferente de vacio en localStorage antes de hacer JSON.parse
+let currentUser = localStorage.getItem("Usuario");
+
+if (currentUser !== null && currentUser !== undefined && currentUser !== 'undefined') {
+    currentUser = JSON.parse(currentUser);
+}else{
+  currentUser = [];
+}
+
 //Trae los datos del usuario actual desde el Local
 //Y muestra los datos necesarios en el formulario 
-let currentUser=JSON.parse(localStorage.getItem("Usuario"))||[];
-let nombreCont=document.getElementById("nombreForm");
-if (nombreCont!==null) {
-  nombreCont.innerHTML= `
-  <h2>Nombre de Usuario: ${currentUser.username}</h2>
-  <h3>Sede: ${currentUser.sede}</h3>`;
-  nombreCont.style.textAlign="center";
+// let currentUser=JSON.parse(localStorage.getItem("Usuario"))||[];
+
+//Verifica que currentUser no sea null antes de usarse
+if(currentUser){
+  let nombreCont=document.getElementById("nombreForm");
+  if (nombreCont!==null) {
+    nombreCont.innerHTML= `
+    <h2>Nombre de Usuario: ${currentUser.username}</h2>
+    <h3>Sede: ${currentUser.sede}</h3>`;
+    nombreCont.style.textAlign="center";
+  }
 }
 
 let contenedorCod=document.getElementById("codigoCont")

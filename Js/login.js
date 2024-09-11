@@ -11,16 +11,32 @@ if (contenedorModal!==null) {
   contenedorModal.style.display = "none";
 }
 
-let nombreUsuario=JSON.parse(localStorage.getItem("Usuario")) || [];
+//Verifica si el valor existe antes de hacer JSON.parse
+let nombreUsuario = localStorage.getItem("Usuario");
+
+if (nombreUsuario !== null && nombreUsuario !== undefined && nombreUsuario !== 'undefined') {
+    nombreUsuario = JSON.parse(nombreUsuario);
+} else {
+  nombreUsuario = [];
+}
+
+// let nombreUsuario = JSON.parse(localStorage.getItem("Usuario")) || [];
 
 let entrar=async ()=>{
     let username=inputName.value;
     let password=inputPass.value;
     let response= await getUsers();
-    let usuario= response.find(user => user.username == username&&user.password==password)
-    nombreUsuario[0]=usuario;
-    localStorage.setItem("Usuario",JSON.stringify(usuario))
+    let usuario= response.find(user => user.username == username && user.password==password)
+    
+    // nombreUsuario[0]=usuario;
+    // localStorage.setItem("Usuario",JSON.stringify(usuario))
+
+    //Validar que exista usuario
     if (usuario) {
+         // Actualiza el nombreUsuario solo si el usuario es válido
+        nombreUsuario[0]=usuario;
+        localStorage.setItem("Usuario",JSON.stringify(usuario))
+
         if(usuario.admin==true){window.location.href= "admin.html";} 
         else window.location.href="formulario.html";
     }
